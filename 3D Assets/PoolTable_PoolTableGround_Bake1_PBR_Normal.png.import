@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0edl6mhacrco"
+uid="uid://7phb1irkv5ol"
 path.s3tc="res://.godot/imported/PoolTable_PoolTableGround_Bake1_PBR_Normal.png-06ac37a34f7164cb74b4a6ac3566310d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
@@ -26,7 +26,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://PoolTable_PoolTableGround_Bake1_PBR_Normal.png"
+roughness/src_normal="res://3D Assets/PoolTable_PoolTableGround_Bake1_PBR_Normal.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

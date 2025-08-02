@@ -57,84 +57,84 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9203, 0, 0)
 
 [node name="Balls" type="Node3D" parent="."]
 
-[node name="Ball" parent="Balls" instance=ExtResource("3_f2txt")]
+[node name="Ball_Cue" parent="Balls" instance=ExtResource("3_f2txt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.99851, 0, 0)
 ball_number = 0
 
-[node name="Ball2" parent="Balls" instance=ExtResource("3_f2txt")]
+[node name="Ball_1" parent="Balls" instance=ExtResource("3_f2txt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.931, 0, 0)
 is_cue = false
 
-[node name="Ball3" parent="Balls" instance=ExtResource("3_f2txt")]
+[node name="Ball_2" parent="Balls" instance=ExtResource("3_f2txt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.824, 0, -0.515)
 is_cue = false
 ball_number = 2
 
-[node name="Ball4" parent="Balls" instance=ExtResource("3_f2txt")]
+[node name="Ball_3" parent="Balls" instance=ExtResource("3_f2txt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.824, 0, 0.515)
 is_cue = false
 ball_number = 3
 
-[node name="Ball5" parent="Balls" instance=ExtResource("3_f2txt")]
+[node name="Ball_4" parent="Balls" instance=ExtResource("3_f2txt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.715, 0, -1.03101)
 is_cue = false
 ball_number = 4
 
-[node name="Ball6" parent="Balls" instance=ExtResource("3_f2txt")]
+[node name="Ball_5" parent="Balls" instance=ExtResource("3_f2txt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.715, 0, 0)
 is_cue = false
 ball_number = 5
 
-[node name="Ball7" parent="Balls" instance=ExtResource("3_f2txt")]
+[node name="Ball_6" parent="Balls" instance=ExtResource("3_f2txt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.715, 0, 1.02866)
 is_cue = false
 ball_number = 6
 
-[node name="Ball8" parent="Balls" instance=ExtResource("3_f2txt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5847, 0, 1.54683)
-is_cue = false
-is_8_ball = true
-ball_number = 10
-
-[node name="Ball9" parent="Balls" instance=ExtResource("3_f2txt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.605, 0, 0.515)
-is_cue = false
-ball_number = 9
-
-[node name="Ball10" parent="Balls" instance=ExtResource("3_f2txt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.60531, 0, -0.515)
-is_cue = false
-ball_number = 8
-
-[node name="Ball11" parent="Balls" instance=ExtResource("3_f2txt")]
+[node name="Ball_7" parent="Balls" instance=ExtResource("3_f2txt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.605, 0, -1.54566)
 is_cue = false
 ball_number = 7
 
-[node name="Ball12" parent="Balls" instance=ExtResource("3_f2txt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.49723, 0, 1.02379)
+[node name="Ball_8" parent="Balls" instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.60531, 0, -0.515)
 is_cue = false
-ball_number = 14
+is_8_ball = true
+ball_number = 8
 
-[node name="Ball16" parent="Balls" instance=ExtResource("3_f2txt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.49723, 0, 2.06217)
+[node name="Ball_9" parent="Balls" instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.605, 0, 0.515)
 is_cue = false
-ball_number = 15
+ball_number = 9
 
-[node name="Ball13" parent="Balls" instance=ExtResource("3_f2txt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.49723, 0, -0.00803363)
+[node name="Ball_10" parent="Balls" instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5847, 0, 1.54683)
 is_cue = false
-ball_number = 13
+ball_number = 10
 
-[node name="Ball14" parent="Balls" instance=ExtResource("3_f2txt")]
+[node name="Ball_11" parent="Balls" instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.49723, 0, -2.06869)
+is_cue = false
+ball_number = 11
+
+[node name="Ball_12" parent="Balls" instance=ExtResource("3_f2txt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.49754, 0, -1.03803)
 is_cue = false
 ball_number = 12
 
-[node name="Ball15" parent="Balls" instance=ExtResource("3_f2txt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.49723, 0, -2.06869)
+[node name="Ball_13" parent="Balls" instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.49723, 0, -0.00803363)
 is_cue = false
-ball_number = 11
+ball_number = 13
+
+[node name="Ball_14" parent="Balls" instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.49723, 0, 1.02379)
+is_cue = false
+ball_number = 14
+
+[node name="Ball_15" parent="Balls" instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.49723, 0, 2.06217)
+is_cue = false
+ball_number = 15
 
 [node name="HitPoint" parent="." instance=ExtResource("6_n6hdu")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -12.5279, 0, -0.899924)
