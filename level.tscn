@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnvmdpk7ha352"]
+[gd_scene load_steps=6 format=3 uid="uid://bnvmdpk7ha352"]
 
+[ext_resource type="Script" uid="uid://ca51xv8rofmne" path="res://level_manager.gd" id="1_f2txt"]
 [ext_resource type="PackedScene" uid="uid://cdgc85vgq178b" path="res://player.tscn" id="1_oi3di"]
 [ext_resource type="PackedScene" uid="uid://dbxu0c75ushvq" path="res://cue.tscn" id="2_0b4ue"]
 [ext_resource type="PackedScene" uid="uid://ckhdwrcmbjvq2" path="res://ball.tscn" id="3_f2txt"]
 [ext_resource type="PackedScene" uid="uid://b7fdn3dvfmeyj" path="res://wall.tscn" id="4_0b4ue"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Level" type="Node3D"]
+script = ExtResource("1_f2txt")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 16, 0)

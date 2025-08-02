@@ -3,6 +3,7 @@ extends CharacterBody3D
 const SPEED : float = 7
 @onready var marker: Sprite3D = $"../Marker"
 @onready var cue: StaticBody3D = $"../Cue"
+@onready var level: Node3D = $".."
 
 const CUE_ROTATE_SPEED : float = 0.1
 const CUE_ROTATION_NORMAL_CHECK : float = 0.7
@@ -47,3 +48,7 @@ func _physics_process(delta: float) -> void:
 				
 				# translate along opposite of normal
 				#acollider.position += collision_results.get_normal() * -SPEED * delta
+		
+		if collision_results.get_collider().get_node("..").name.substr(0, 4) == "Ball":
+			level.report_player_foul()
+			#velocity = Vector3.ZERO

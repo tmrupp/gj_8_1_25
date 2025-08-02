@@ -15,10 +15,6 @@ run/main_scene="uid://bnvmdpk7ha352"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[display]
-
-window/size/mode=2
-
 [dotnet]
 
 project/assembly_name="GJ_8_1_25"
