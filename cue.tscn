@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cr57xdotebeg8"]
+[gd_scene load_steps=5 format=3 uid="uid://cr57xdotebeg8"]
 
 [ext_resource type="Texture2D" uid="uid://oi4emc4hgg08" path="res://BasicSprites/Square.svg" id="1_nykms"]
 [ext_resource type="Script" uid="uid://cpcnxoonx2mm" path="res://cue.gd" id="1_suyr1"]
+[ext_resource type="PackedScene" uid="uid://dnjffw6vgcffs" path="res://3D Assets/PoolCue.glb" id="3_0delh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2bjar"]
 size = Vector3(2.048, 1, 0.102)
@@ -16,12 +17,14 @@ shape = SubResource("BoxShape3D_2bjar")
 
 [node name="Stick" type="Sprite3D" parent="CollisionShape3D"]
 transform = Transform3D(0.4, 0, 0, 0, 0.2, 0, 0, 0, 0.02, 0, 0, 0)
+visible = false
 modulate = Color(0.484856, 0.318729, 0.120674, 1)
 axis = 1
 texture = ExtResource("1_nykms")
 
 [node name="Tip" type="Sprite3D" parent="CollisionShape3D"]
 transform = Transform3D(0.02, 0, 0, 0, 0.2, 0, 0, 0, 0.02, 0.973, 0, 0)
+visible = false
 modulate = Color(0.93877, 0.713277, 0.472478, 1)
 axis = 1
 render_priority = 1
@@ -30,3 +33,8 @@ texture = ExtResource("1_nykms")
 [node name="RayCast3D" type="RayCast3D" parent="CollisionShape3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.971119, 0, 0)
 target_position = Vector3(0.6, 0, 0)
+
+[node name="Node3D" type="Node3D" parent="CollisionShape3D"]
+transform = Transform3D(-2.99423e-08, 0, 0.685, 0, 0.685, 0, -0.685, 0, -2.99423e-08, 0, 0, 0)
+
+[node name="PoolCue" parent="CollisionShape3D/Node3D" instance=ExtResource("3_0delh")]

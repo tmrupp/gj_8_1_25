@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://de5xyvcpch6f"]
+[gd_scene load_steps=4 format=3 uid="uid://o14owkbown13"]
 
 [ext_resource type="Texture2D" uid="uid://grjpwh88pi6e" path="res://BasicSprites/Circle.svg" id="1_3ie8a"]
-[ext_resource type="Script" uid="uid://bhaxmdle1em2x" path="res://pocket.gd" id="1_ix6pn"]
+[ext_resource type="Script" path="res://pocket.gd" id="1_ix6pn"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ix6pn"]
 radius = 2.6
@@ -15,7 +15,6 @@ script = ExtResource("1_ix6pn")
 shape = SubResource("CylinderShape3D_ix6pn")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 modulate = Color(0.946031, 0.618019, 0.224595, 1)
 axis = 1
 texture = ExtResource("1_3ie8a")
