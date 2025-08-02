@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var collider = $Body/Collider
 @onready var body = $Body
-@onready var hit_point = $"../HitPoint"
+@onready var hit_point = $/root/Level/HitPoint
 @export var is_cue = true
 @export var friction = 100.0
 @export var ball_number : int = 1
