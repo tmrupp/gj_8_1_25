@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bnvmdpk7ha352"]
+[gd_scene load_steps=16 format=3 uid="uid://bnvmdpk7ha352"]
 
 [ext_resource type="Script" uid="uid://ca51xv8rofmne" path="res://level_manager.gd" id="1_f2txt"]
 [ext_resource type="PackedScene" uid="uid://dkl0g4g78ogfl" path="res://player.tscn" id="1_oi3di"]
@@ -7,6 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://ckhdwrcmbjvq2" path="res://ball.tscn" id="3_f2txt"]
 [ext_resource type="PackedScene" uid="uid://b7fdn3dvfmeyj" path="res://wall.tscn" id="4_0b4ue"]
 [ext_resource type="PackedScene" uid="uid://bahpyc15wjbob" path="res://hit_point.tscn" id="6_n6hdu"]
+[ext_resource type="Script" uid="uid://bvcti16mvkff6" path="res://menu.gd" id="8_i2t4f"]
+[ext_resource type="Texture2D" uid="uid://oi4emc4hgg08" path="res://BasicSprites/Square.svg" id="9_2orkt"]
+[ext_resource type="Script" uid="uid://ra5ja2cw5nli" path="res://level_Selector.gd" id="9_8cye3"]
+[ext_resource type="Script" uid="uid://do3f6rq0jndky" path="res://exit.gd" id="10_2orkt"]
+[ext_resource type="Script" uid="uid://ddn6k6lrgukar" path="res://resume.gd" id="10_aicyk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f2txt"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -172,3 +177,123 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8772, 0, -9.98808)
 
 [node name="Pocket6" parent="Pockets" instance=ExtResource("3_1ainy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.5747)
+
+[node name="Menu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_i2t4f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Menu"]
+
+[node name="TextureRect" type="TextureRect" parent="Menu/CanvasLayer"]
+modulate = Color(0.180005, 0.180005, 0.180005, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_2orkt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu/CanvasLayer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="Menu/CanvasLayer/VBoxContainer/HBoxContainer"]
+process_mode = 3
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Resume"
+script = ExtResource("10_aicyk")
+
+[node name="Exit" type="Button" parent="Menu/CanvasLayer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Exit
+"
+script = ExtResource("10_2orkt")
+
+[node name="Container" type="Container" parent="Menu/CanvasLayer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Menu/CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Volume"
+
+[node name="Control" type="Control" parent="Menu/CanvasLayer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="HSlider" type="HSlider" parent="Menu/CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="GridContainer" type="GridContainer" parent="Menu/CanvasLayer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+columns = 3
+script = ExtResource("9_8cye3")
+
+[node name="Button" type="Button" parent="Menu/CanvasLayer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Level 1"
+
+[node name="Button2" type="Button" parent="Menu/CanvasLayer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Blah"
+
+[node name="Button3" type="Button" parent="Menu/CanvasLayer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Blah"
+
+[node name="Button4" type="Button" parent="Menu/CanvasLayer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Blah"
+
+[node name="Button5" type="Button" parent="Menu/CanvasLayer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Blah"
+
+[node name="Button6" type="Button" parent="Menu/CanvasLayer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Blah"
+
+[node name="Button7" type="Button" parent="Menu/CanvasLayer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Blah"
+
+[node name="Button8" type="Button" parent="Menu/CanvasLayer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Blah"
+
+[node name="Button9" type="Button" parent="Menu/CanvasLayer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Blah"
