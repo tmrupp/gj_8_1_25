@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cc658ydk0ogg1" path="res://ball.gd" id="1_41u45"]
 [ext_resource type="Texture2D" uid="uid://grjpwh88pi6e" path="res://BasicSprites/Circle.svg" id="2_ktgx5"]
 [ext_resource type="PackedScene" uid="uid://djdhjtfsgugvy" path="res://3D Assets/CueBall.glb" id="3_ce0bl"]
-[ext_resource type="Script" uid="uid://br1qyyaj5jhk5" path="res://show_correct_ball.gd" id="3_of1j4"]
+[ext_resource type="Script" path="res://show_correct_ball.gd" id="3_of1j4"]
 [ext_resource type="PackedScene" uid="uid://djhyx80i1pknv" path="res://3D Assets/1Ball.glb" id="4_of1j4"]
 [ext_resource type="PackedScene" uid="uid://pndc6e0kwuw3" path="res://3D Assets/2Ball.glb" id="5_ry73i"]
 [ext_resource type="PackedScene" uid="uid://bx06cbt2ns5yx" path="res://3D Assets/3Ball.glb" id="6_fa2nk"]
@@ -54,33 +54,48 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
 script = ExtResource("3_of1j4")
 
 [node name="CueBall" parent="Body/ModelScale/ModelOffset" instance=ExtResource("3_ce0bl")]
+visible = false
 
 [node name="1Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("4_of1j4")]
 
 [node name="2Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("5_ry73i")]
+visible = false
 
 [node name="3Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("6_fa2nk")]
+visible = false
 
 [node name="4Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("7_rqepa")]
+visible = false
 
 [node name="5Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("8_esq11")]
+visible = false
 
 [node name="6Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("9_6v5jr")]
+visible = false
 
 [node name="7Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("10_qj8p2")]
+visible = false
 
 [node name="8Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("11_m0dfq")]
+visible = false
 
 [node name="9Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("12_ko8cu")]
+visible = false
 
 [node name="10Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("13_0lv2y")]
+visible = false
 
 [node name="11Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("14_xgpbv")]
+visible = false
 
 [node name="12Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("15_u32yx")]
+visible = false
 
 [node name="13Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("16_d55jd")]
+visible = false
 
 [node name="14Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("17_pmvr8")]
+visible = false
 
 [node name="15Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("18_7jvvu")]
+visible = false

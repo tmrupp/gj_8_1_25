@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cp52y10q718bn"]
+[gd_scene load_steps=7 format=3 uid="uid://cp52y10q718bn"]
 
-[ext_resource type="PackedScene" uid="uid://dbgxia2u7ephg" path="res://ball.tscn" id="1_d7xqy"]
-[ext_resource type="Texture2D" uid="uid://grjpwh88pi6e" path="res://BasicSprites/Circle.svg" id="1_pveec"]
+[ext_resource type="PackedScene" uid="uid://ckhdwrcmbjvq2" path="res://ball.tscn" id="1_d7xqy"]
 [ext_resource type="Texture2D" uid="uid://oi4emc4hgg08" path="res://BasicSprites/Square.svg" id="1_wa7yi"]
+[ext_resource type="PackedScene" uid="uid://bahpyc15wjbob" path="res://hit_point.tscn" id="3_xalrb"]
+[ext_resource type="PackedScene" uid="uid://djhyx80i1pknv" path="res://3D Assets/1Ball.glb" id="4_xalrb"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d7xqy"]
 friction = 0.0
@@ -29,14 +30,8 @@ modulate = Color(3.00817e-07, 0.310839, 9.62615e-08, 1)
 axis = 1
 texture = ExtResource("1_wa7yi")
 
-[node name="HitPoint" type="Node3D" parent="."]
+[node name="HitPoint" parent="." instance=ExtResource("3_xalrb")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -1.93343, 0, 1.14596)
-
-[node name="Sprite3D" type="Sprite3D" parent="HitPoint"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-modulate = Color(1, 0, 0, 1)
-axis = 1
-texture = ExtResource("1_pveec")
 
 [node name="Wall" type="Node3D" parent="."]
 transform = Transform3D(1.7127, 0, 0.565504, 0, 1.145, 0, -0.119763, 0, 8.08708, 4.82232, 0, -4.19778)
@@ -51,3 +46,6 @@ shape = SubResource("BoxShape3D_xalrb")
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1, 0)
 axis = 1
 texture = ExtResource("1_wa7yi")
+
+[node name="1Ball" parent="." instance=ExtResource("4_xalrb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05035, 0, 1.54093)

@@ -6,9 +6,19 @@ extends Node3D
 @export var is_cue = true
 @export var friction = 100.0
 @export var ball_number : int = 1
+var start_position
 
 func _ready():
 	body.connect("body_entered", collision)
+	add_to_group("balls")
+	
+	start_position = global_position
+	print("start_position=", start_position)
+	
+	# ENABLE TO DO MANUAL
+	#body.contact_monitor = true
+	#body.max_contacts_reported = 2
+	
 	#apply_impulse(Vector3.FORWARD*1200)
 	
 func _process(delta):
