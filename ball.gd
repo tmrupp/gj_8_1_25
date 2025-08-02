@@ -1,13 +1,13 @@
-extends RigidBody3D
+extends Node3D
 
-@onready var collider = $Collider
-
+@onready var collider = $Body/Collider
+@onready var body = $Body
 @onready var hit_point = $"../HitPoint"
 @export var is_cue = true
 @export var friction = 100.0
 
 func _ready():
-	connect("body_entered", collision)
+	body.connect("body_entered", collision)
 	#apply_impulse(Vector3.FORWARD*1200)
 	
 func _process(delta):
@@ -15,11 +15,11 @@ func _process(delta):
 	pass
 	
 func _physics_process(delta):
-	apply_force(-linear_velocity.normalized()*friction*delta)
+	body.apply_force(-body.linear_velocity.normalized()*friction*delta)
 	
 func collision(_other):
 	# Get body rid
-	var rid := get_rid()
+	var rid = body.get_rid()
 	# Get body physics state
 	var state := PhysicsServer3D.body_get_direct_state(rid)
 	print("collision, self=", self, " other=", _other)
@@ -27,9 +27,9 @@ func collision(_other):
 
 func hit (point):
 	var direction = position - point
-	print("hit @ ", point, " from ", position, " direction ", direction)
-	apply_impulse(direction.normalized()*10)
-	print(linear_velocity)
+	#print("hit @ ", point, " from ", position, " direction ", direction)
+	body.apply_impulse(direction.normalized()*10)
+	#print(linear_velocity)
 	
 func _input(event):
 	if is_cue and event is InputEventMouseButton and event.is_pressed():

@@ -1,46 +1,28 @@
 [gd_scene load_steps=6 format=3 uid="uid://cp52y10q718bn"]
 
+[ext_resource type="PackedScene" uid="uid://dbgxia2u7ephg" path="res://ball.tscn" id="1_d7xqy"]
 [ext_resource type="Texture2D" uid="uid://grjpwh88pi6e" path="res://BasicSprites/Circle.svg" id="1_pveec"]
 [ext_resource type="Texture2D" uid="uid://oi4emc4hgg08" path="res://BasicSprites/Square.svg" id="1_wa7yi"]
-[ext_resource type="Script" uid="uid://cc658ydk0ogg1" path="res://ball.gd" id="2_d7xqy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d7xqy"]
+friction = 0.0
 bounce = 1.0
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_d7xqy"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_xalrb"]
 
 [node name="Main" type="Node3D"]
+
+[node name="Ball" parent="." instance=ExtResource("1_d7xqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0511932, 0, 0.0102386)
+
+[node name="Ball2" parent="." instance=ExtResource("1_d7xqy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28424, 0, -1.61238)
+is_cue = false
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.16503, 2.7478, 1.33241)
 projection = 1
 size = 20.0
-
-[node name="Ball" type="RigidBody3D" parent="."]
-physics_material_override = SubResource("PhysicsMaterial_d7xqy")
-script = ExtResource("2_d7xqy")
-
-[node name="Collider" type="CollisionShape3D" parent="Ball"]
-shape = SubResource("CylinderShape3D_d7xqy")
-
-[node name="Sprite" type="Sprite3D" parent="Ball"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1, 0)
-axis = 1
-texture = ExtResource("1_pveec")
-
-[node name="Ball2" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.78356, 0, -1.47501)
-script = ExtResource("2_d7xqy")
-is_cue = false
-
-[node name="Collider" type="CollisionShape3D" parent="Ball2"]
-shape = SubResource("CylinderShape3D_d7xqy")
-
-[node name="Sprite" type="Sprite3D" parent="Ball2"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1, 0)
-modulate = Color(0.966667, 1, 0, 1)
-axis = 1
-texture = ExtResource("1_pveec")
 
 [node name="Table" type="Sprite3D" parent="."]
 modulate = Color(3.00817e-07, 0.310839, 9.62615e-08, 1)
@@ -55,3 +37,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 modulate = Color(1, 0, 0, 1)
 axis = 1
 texture = ExtResource("1_pveec")
+
+[node name="Wall" type="Node3D" parent="."]
+transform = Transform3D(1.7127, 0, 0.565504, 0, 1.145, 0, -0.119763, 0, 8.08708, 4.82232, 0, -4.19778)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall"]
+physics_material_override = SubResource("PhysicsMaterial_d7xqy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/StaticBody3D"]
+shape = SubResource("BoxShape3D_xalrb")
+
+[node name="Sprite3D" type="Sprite3D" parent="Wall/StaticBody3D"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1, 0)
+axis = 1
+texture = ExtResource("1_wa7yi")
