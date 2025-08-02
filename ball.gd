@@ -24,7 +24,8 @@ func _ready():
 	
 func _process(delta):
 	if is_cue:
-		print("position=", position)
+		print("position=", position, " body.global_position=", body.global_position)
+		
 	pass
 	
 func _physics_process(delta):
