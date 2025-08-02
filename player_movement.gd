@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 				collider.rotate(Vector3.UP, -CUE_ROTATE_SPEED)
 		else:
 			# translate in direction of player movement
-			#collider.position += velocity * delta
+			collider.position += velocity * delta
 			
 			# translate along opposite of normal
-			collider.position += collision_results.get_normal() * -SPEED * delta
+			#collider.position += collision_results.get_normal() * -SPEED * delta
