@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://difxnodsbl7rv"
-path.s3tc="res://.godot/imported/1Ball_1balltexture.jpg-8126064c4f5124626727ea9198f37de0.s3tc.ctex"
+uid="uid://da4cf0cbgx1am"
+path.s3tc="res://.godot/imported/2Ball_2balltexture.jpg-9a93968f8c830763bac036d123b16877.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "0b59d9e1ba41505b5e6d8bbf82e53abe"
+"md5": "d3eb619c38f302cab722df89d2ec371b"
 }
 
 [deps]
 
-source_file="res://3D Assets/1Ball_1balltexture.jpg"
-dest_files=["res://.godot/imported/1Ball_1balltexture.jpg-8126064c4f5124626727ea9198f37de0.s3tc.ctex"]
+source_file="res://3D Assets/2Ball_2balltexture.jpg"
+dest_files=["res://.godot/imported/2Ball_2balltexture.jpg-9a93968f8c830763bac036d123b16877.s3tc.ctex"]
 
 [params]
 
