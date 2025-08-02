@@ -23,7 +23,8 @@ func _ready():
 	#apply_impulse(Vector3.FORWARD*1200)
 	
 func _process(delta):
-	#print("position=", position)
+	if is_cue:
+		print("position=", position)
 	pass
 	
 func _physics_process(delta):
@@ -38,7 +39,7 @@ func collision(_other):
 	hit(state.get_contact_local_position(0))
 
 func hit (point):
-	var direction = body.position - point
+	var direction = body.global_position - point
 	#print("hit @ ", point, " from ", position, " direction ", direction)
 	body.apply_impulse(direction.normalized()*10)
 	#print(linear_velocity)
