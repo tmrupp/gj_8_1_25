@@ -41,4 +41,4 @@ func _physics_process(delta: float) -> void:
 			collider.position += velocity * delta
 			
 			# translate along opposite of normal
-			#collider.position += collision_results.get_normal() * -SPEED * delta
+			#acollider.position += collision_results.get_normal() * -SPEED * delta

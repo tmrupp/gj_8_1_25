@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbxu0c75ushvq"]
+
+[ext_resource type="Texture2D" uid="uid://oi4emc4hgg08" path="res://BasicSprites/Square.svg" id="1_nykms"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2bjar"]
+size = Vector3(10.2, 1, 0.5)
+
+[node name="Cue" type="StaticBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_2bjar")
+
+[node name="Sprite3D" type="Sprite3D" parent="CollisionShape3D"]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, 0)
+modulate = Color(0.484856, 0.318729, 0.120674, 1)
+axis = 1
+texture = ExtResource("1_nykms")

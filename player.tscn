@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdgc85vgq178b"]
+
+[ext_resource type="Script" uid="uid://bgvat5ecyifvg" path="res://player_movement.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://grjpwh88pi6e" path="res://BasicSprites/Circle.svg" id="2_i3pqv"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2bjar"]
+height = 1.0
+radius = 2.55
+
+[node name="Player" type="CharacterBody3D"]
+axis_lock_angular_y = true
+script = ExtResource("1_onrkg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00323486, 0, 0)
+shape = SubResource("CylinderShape3D_2bjar")
+
+[node name="Sprite3D" type="Sprite3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00323486, 0, 0)
+modulate = Color(0.481474, 0.144974, 0.243911, 1)
+axis = 1
+texture = ExtResource("2_i3pqv")

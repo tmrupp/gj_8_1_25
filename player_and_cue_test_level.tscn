@@ -1,15 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfdoj7hiruw2f"]
+[gd_scene load_steps=4 format=3 uid="uid://cfdoj7hiruw2f"]
 
-[ext_resource type="Script" uid="uid://bgvat5ecyifvg" path="res://player_movement.gd" id="1_k187r"]
-[ext_resource type="Texture2D" uid="uid://oi4emc4hgg08" path="res://BasicSprites/Square.svg" id="1_ysna0"]
+[ext_resource type="PackedScene" uid="uid://cdgc85vgq178b" path="res://player.tscn" id="2_2bjar"]
 [ext_resource type="Texture2D" uid="uid://grjpwh88pi6e" path="res://BasicSprites/Circle.svg" id="3_2bjar"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_2bjar"]
-height = 1.0
-radius = 2.55
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_2bjar"]
-size = Vector3(10.2, 1, 0.5)
+[ext_resource type="PackedScene" uid="uid://dbxu0c75ushvq" path="res://cue.tscn" id="3_fgop6"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -22,72 +15,7 @@ modulate = Color(0, 1, 0, 1)
 axis = 1
 texture = ExtResource("3_2bjar")
 
-[node name="Player" type="CharacterBody3D" parent="."]
-axis_lock_angular_y = true
-script = ExtResource("1_k187r")
+[node name="Player" parent="." instance=ExtResource("2_2bjar")]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00323486, 0, 0)
-shape = SubResource("CylinderShape3D_2bjar")
-
-[node name="Sprite3D" type="Sprite3D" parent="Player/CollisionShape3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00323486, 0, 0)
-modulate = Color(0.481474, 0.144974, 0.243911, 1)
-axis = 1
-texture = ExtResource("3_2bjar")
-
-[node name="Cue" type="StaticBody3D" parent="."]
+[node name="Cue" parent="." instance=ExtResource("3_fgop6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
-axis_lock_angular_x = true
-axis_lock_angular_z = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cue"]
-shape = SubResource("BoxShape3D_2bjar")
-
-[node name="Sprite3D" type="Sprite3D" parent="Cue/CollisionShape3D"]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, 0)
-modulate = Color(0.484856, 0.318729, 0.120674, 1)
-axis = 1
-texture = ExtResource("1_ysna0")
-
-[node name="Cue2" type="StaticBody3D" parent="."]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 8, 0, 8)
-axis_lock_angular_x = true
-axis_lock_angular_z = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cue2"]
-shape = SubResource("BoxShape3D_2bjar")
-
-[node name="Sprite3D" type="Sprite3D" parent="Cue2/CollisionShape3D"]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, 0)
-modulate = Color(0.484856, 0.318729, 0.120674, 1)
-axis = 1
-texture = ExtResource("1_ysna0")
-
-[node name="Cue3" type="StaticBody3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -14.3202, 0, 0)
-axis_lock_angular_x = true
-axis_lock_angular_z = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cue3"]
-shape = SubResource("BoxShape3D_2bjar")
-
-[node name="Sprite3D" type="Sprite3D" parent="Cue3/CollisionShape3D"]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, 0)
-modulate = Color(0.484856, 0.318729, 0.120674, 1)
-axis = 1
-texture = ExtResource("1_ysna0")
-
-[node name="Cue4" type="StaticBody3D" parent="."]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 8, 0, -14.1989)
-axis_lock_angular_x = true
-axis_lock_angular_z = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Cue4"]
-shape = SubResource("BoxShape3D_2bjar")
-
-[node name="Sprite3D" type="Sprite3D" parent="Cue4/CollisionShape3D"]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, 0)
-modulate = Color(0.484856, 0.318729, 0.120674, 1)
-axis = 1
-texture = ExtResource("1_ysna0")
