@@ -14,7 +14,7 @@ func _ready():
 	add_to_group("balls")
 	
 	start_position = global_position
-	print("start_position=", start_position)
+	#print("start_position=", start_position)
 	
 	# ENABLE TO DO MANUAL
 	#body.contact_monitor = true
@@ -42,7 +42,10 @@ func hit (point):
 	#print("hit @ ", point, " from ", position, " direction ", direction)
 	body.apply_impulse(direction.normalized()*10)
 	#print(linear_velocity)
-	
+
+func hit_via_vector(direction : Vector3):
+	body.apply_impulse(direction.normalized()*10)
+
 func _input(event):
 	if hit_point != null and is_cue and event is InputEventMouseButton and event.is_pressed():
 		if event.button_index == MOUSE_BUTTON_RIGHT:

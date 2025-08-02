@@ -1,12 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://du86shskgg4nd"]
+[gd_scene load_steps=11 format=3 uid="uid://bnvmdpk7ha352"]
 
 [ext_resource type="Script" uid="uid://ca51xv8rofmne" path="res://level_manager.gd" id="1_f2txt"]
 [ext_resource type="PackedScene" uid="uid://dkl0g4g78ogfl" path="res://player.tscn" id="1_oi3di"]
 [ext_resource type="PackedScene" uid="uid://cr57xdotebeg8" path="res://cue.tscn" id="2_0b4ue"]
-[ext_resource type="PackedScene" uid="uid://de5xyvcpch6f" path="res://pocket.tscn" id="3_1ainy"]
+[ext_resource type="PackedScene" path="res://pocket.tscn" id="3_1ainy"]
 [ext_resource type="PackedScene" uid="uid://ckhdwrcmbjvq2" path="res://ball.tscn" id="3_f2txt"]
-[ext_resource type="PackedScene" path="res://wall.tscn" id="4_0b4ue"]
-[ext_resource type="PackedScene" uid="uid://bahpyc15wjbob" path="res://hit_point.tscn" id="6_n6hdu"]
+[ext_resource type="PackedScene" uid="uid://b7fdn3dvfmeyj" path="res://wall.tscn" id="4_0b4ue"]
+[ext_resource type="PackedScene" path="res://hit_point.tscn" id="6_n6hdu"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f2txt"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
