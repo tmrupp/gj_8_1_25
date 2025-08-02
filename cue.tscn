@@ -12,8 +12,15 @@ axis_lock_angular_z = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_2bjar")
 
-[node name="Sprite3D" type="Sprite3D" parent="CollisionShape3D"]
+[node name="Stick" type="Sprite3D" parent="CollisionShape3D"]
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, 0)
 modulate = Color(0.484856, 0.318729, 0.120674, 1)
 axis = 1
+texture = ExtResource("1_nykms")
+
+[node name="Tip" type="Sprite3D" parent="CollisionShape3D"]
+transform = Transform3D(0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 4.87, 0, 0)
+modulate = Color(0.93877, 0.713277, 0.472478, 1)
+axis = 1
+render_priority = 1
 texture = ExtResource("1_nykms")
