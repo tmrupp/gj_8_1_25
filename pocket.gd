@@ -12,7 +12,7 @@ func _on_body_entered(body):
 		if not entity.is_cue:
 			if entity.is_8_ball:
 				level.end()
-				print("hooray you win")
+				# print("hooray you win")
 			entity.queue_free()
 		else:
 			body.linear_velocity = Vector3.ZERO

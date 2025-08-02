@@ -22,9 +22,10 @@ func _ready():
 	
 	#apply_impulse(Vector3.FORWARD*1200)
 	
-func _process(delta):
-	if is_cue:
-		print("position=", position)
+func _process(_delta):
+	# if is_cue:
+	# 	print("position=", position, " body.global_position=", body.global_position)
+		
 	pass
 	
 func _physics_process(delta):
