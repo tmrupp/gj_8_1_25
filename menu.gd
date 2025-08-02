@@ -2,9 +2,12 @@ extends Control
 @onready var level = $".."
 
 func set_pause():
+	
 	level.process_mode = Node.PROCESS_MODE_DISABLED if visible else Node.PROCESS_MODE_INHERIT
+	
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	set_pause()
 	
 func toggle ():
