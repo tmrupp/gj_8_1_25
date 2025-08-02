@@ -54,7 +54,7 @@ ESC={
 
 [physics]
 
-3d/default_gravity=0.0
+3d/default_gravity=9.8
 
 [rendering]
 

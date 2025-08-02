@@ -21,10 +21,10 @@
 [ext_resource type="PackedScene" uid="uid://cdmax7s601ysk" path="res://3D Assets/15Ball.glb" id="18_7jvvu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_41u45"]
-friction = 0.0
-bounce = 1.0
+friction = 0.5
+bounce = 0.5
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_d7xqy"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_of1j4"]
 
 [node name="Ball" type="Node3D"]
 script = ExtResource("1_41u45")
@@ -32,12 +32,11 @@ friction = 40.0
 
 [node name="Body" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001, 0, -0.002)
-axis_lock_angular_x = true
-axis_lock_angular_z = true
 physics_material_override = SubResource("PhysicsMaterial_41u45")
+angular_damp = 2.0
 
 [node name="Collider" type="CollisionShape3D" parent="Body"]
-shape = SubResource("CylinderShape3D_d7xqy")
+shape = SubResource("SphereShape3D_of1j4")
 
 [node name="Sprite" type="Sprite3D" parent="Body"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)

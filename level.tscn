@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bnvmdpk7ha352"]
+[gd_scene load_steps=20 format=3 uid="uid://bnvmdpk7ha352"]
 
 [ext_resource type="Script" uid="uid://ca51xv8rofmne" path="res://level_manager.gd" id="1_f2txt"]
 [ext_resource type="PackedScene" uid="uid://dkl0g4g78ogfl" path="res://player.tscn" id="1_oi3di"]
@@ -28,6 +28,12 @@ background_mode = 2
 sky = SubResource("Sky_1ainy")
 tonemap_mode = 2
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h6smj"]
+rough = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h6smj"]
+size = Vector3(3.96527, 0.499512, 6.00092)
+
 [node name="Level" type="Node3D"]
 script = ExtResource("1_f2txt")
 
@@ -38,25 +44,35 @@ environment = SubResource("Environment_n6hdu")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20, 0)
+visible = false
 light_color = Color(1, 0.839216, 0.607843, 1)
 light_energy = 10.0
+shadow_enabled = true
 spot_range = 32.0
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12, 20, 0)
+visible = false
 light_color = Color(1, 0.839216, 0.607843, 1)
 light_energy = 10.0
 spot_range = 32.0
 
 [node name="SpotLight3D3" type="SpotLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -12, 20, 0)
+visible = false
 light_color = Color(1, 0.839216, 0.607843, 1)
 light_energy = 10.0
 spot_range = 32.0
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
+light_color = Color(1, 0.839216, 0.607843, 1)
+shadow_enabled = true
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 16, 0)
 projection = 1
+current = true
 size = 24.0
 
 [node name="Player" parent="." instance=ExtResource("1_oi3di")]
@@ -232,6 +248,13 @@ transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 0, 0, -11.936)
 
 [node name="PoolTable" parent="." instance=ExtResource("8_km5ld")]
 transform = Transform3D(-3.49691e-07, 0, 8, 0, 8, 0, -8, 0, -3.49691e-07, 0, -0.5, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PoolTable"]
+physics_material_override = SubResource("PhysicsMaterial_h6smj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PoolTable/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0133362, -0.250244, -0.00253296)
+shape = SubResource("BoxShape3D_h6smj")
 
 [node name="Menu" type="Control" parent="."]
 layout_mode = 3

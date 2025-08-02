@@ -12,8 +12,13 @@ script = ExtResource("1_rtb52")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_rtb52")
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="FirstPersonLocation" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+
+[node name="ThirdPersonLocation" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.997564, 0.0697565, 0, -0.0697565, 0.997564, 0, 1.3905, 2.25098)
+
+[node name="Camera3D" type="Camera3D" parent="ThirdPersonLocation"]
 current = true
 
 [node name="Sprite3D" type="Sprite3D" parent="."]

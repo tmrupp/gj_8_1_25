@@ -29,7 +29,8 @@ func _process(_delta):
 	pass
 	
 func _physics_process(delta):
-	body.apply_force(-body.linear_velocity.normalized()*friction*delta)
+	#body.apply_force(-body.linear_velocity.normalized()*friction*delta)
+	pass
 	
 func collision(_other):
 	# Get body rid
@@ -46,7 +47,7 @@ func hit (point):
 	#print(linear_velocity)
 
 func hit_via_vector(direction : Vector3):
-	body.apply_impulse(direction.normalized()*10)
+	body.apply_impulse(direction.normalized()*35)
 
 func _input(event):
 	if hit_point != null and is_cue and event is InputEventMouseButton and event.is_pressed():

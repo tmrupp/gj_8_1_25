@@ -1,13 +1,20 @@
 extends CharacterBody3D
 
 @onready var level: Node3D = $"/root/Level"
-@onready var camera: Camera3D = $"Camera3D"
+@onready var camera: Camera3D # found in ready
+
+@onready var first_person_location: Node3D = $FirstPersonLocation
+@onready var third_person_location: Node3D = $ThirdPersonLocation
+var first_person_is_active : bool = false
 
 const SPEED = 5.0
 var mouse_sensitivity = 0.002
 
 const CUE_ROTATE_SPEED : float = 0.1
 const CUE_ROTATION_NORMAL_CHECK : float = 0.7
+
+func _ready() -> void:
+	camera = find_child("Camera3D")
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -74,3 +81,13 @@ func _input(event):
 		rotate_y(-event.relative.x * mouse_sensitivity)
 		camera.rotate_x(-event.relative.y * mouse_sensitivity)
 		camera.rotation.x = clampf(camera.rotation.x, -deg_to_rad(85), deg_to_rad(85))
+	
+	if event is InputEventKey and event.keycode == KEY_Q and event.pressed:
+		if first_person_is_active:
+			first_person_location.remove_child(camera)
+			third_person_location.add_child(camera)
+			first_person_is_active = false
+		else:
+			third_person_location.remove_child(camera)
+			first_person_location.add_child(camera)
+			first_person_is_active = true
