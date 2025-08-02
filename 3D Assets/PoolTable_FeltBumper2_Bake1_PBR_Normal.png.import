@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp4asbi5rhpi6"
+uid="uid://do0crwe2qwh6"
 path.s3tc="res://.godot/imported/PoolTable_FeltBumper2_Bake1_PBR_Normal.png-7685ffd01832357bb57b286fa0ec90e2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
@@ -26,7 +26,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://PoolTable_FeltBumper2_Bake1_PBR_Normal.png"
+roughness/src_normal="res://3D Assets/PoolTable_FeltBumper2_Bake1_PBR_Normal.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
