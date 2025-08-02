@@ -65,6 +65,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2308, 0, 0)
 visible = false
 
 [node name="Player2" parent="." instance=ExtResource("3_h6smj")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.7502, 0, 0)
 
 [node name="Cue" parent="." instance=ExtResource("2_0b4ue")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9203, 0, 0)
