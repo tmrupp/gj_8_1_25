@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2wfyu7tpds25"]
+
+[ext_resource type="Script" uid="uid://m83bsoukcao5" path="res://player_first_third_person.gd" id="1_rtb52"]
+[ext_resource type="Texture2D" uid="uid://bhkq3meuatlsq" path="res://BasicSprites/Triangle.svg" id="1_wki8j"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rtb52"]
+height = 1.0
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_rtb52")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_rtb52")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+current = true
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-0.2, 1.74846e-08, 0, -1.74846e-08, -0.2, 0, 0, 0, 0.2, 0, 0, 0)
+modulate = Color(0.34902, 0, 0.0901961, 1)
+texture = ExtResource("1_wki8j")

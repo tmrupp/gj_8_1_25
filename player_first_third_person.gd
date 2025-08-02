@@ -1,21 +1,28 @@
 extends CharacterBody3D
 
-const SPEED : float = 7
-@onready var marker: Sprite3D = $"../Marker"
-@onready var cue: StaticBody3D = $"../Cue"
 @onready var level: Node3D = $"/root/Level"
+@onready var camera: Camera3D = $"Camera3D"
+
+const SPEED = 5.0
+var mouse_sensitivity = 0.002
 
 const CUE_ROTATE_SPEED : float = 0.1
 const CUE_ROTATION_NORMAL_CHECK : float = 0.7
 
 func _physics_process(delta: float) -> void:
-	var direction : Vector2 = Input.get_vector("Left", "Right", "Up", "Down")
-	velocity = Vector3(direction.x, 0, direction.y) * SPEED
-	
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var input_dir := Input.get_vector("Left", "Right", "Up", "Down")
+	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	if direction:
+		velocity.x = direction.x * SPEED
+		velocity.z = direction.z * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.z = move_toward(velocity.z, 0, SPEED)
+
 	var collision_results : KinematicCollision3D = move_and_collide(velocity * delta)
 	if collision_results:
-		if not marker == null:
-			marker.position = collision_results.get_position()
 		
 		if collision_results.get_collider().name == "Cue":
 			var collider : StaticBody3D = collision_results.get_collider()
@@ -52,3 +59,18 @@ func _physics_process(delta: float) -> void:
 		if collision_results.get_collider().get_node("..").is_in_group("balls"):
 			level.report_player_foul()
 			#velocity = Vector3.ZERO
+
+
+func _input(event):
+	# toggle mouse look
+	if event is InputEventKey and event.keycode == KEY_ESCAPE and event.pressed:
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		else:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	
+	# rotate player/camera view with mouse movement
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		rotate_y(-event.relative.x * mouse_sensitivity)
+		camera.rotate_x(-event.relative.y * mouse_sensitivity)
+		camera.rotation.x = clampf(camera.rotation.x, -deg_to_rad(85), deg_to_rad(85))
