@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var area = $Area3D
+@onready var level = $/root/Level
 
 func _ready():
 	area.connect("body_entered", _on_body_entered)
@@ -9,6 +10,9 @@ func _on_body_entered(body):
 	var entity = body.get_parent()
 	if entity.is_in_group("balls"):
 		if not entity.is_cue:
+			if entity.is_8_ball:
+				level.end()
+				print("hooray you win")
 			entity.queue_free()
 		else:
 			body.linear_velocity = Vector3.ZERO

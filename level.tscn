@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://du86shskgg4nd"]
 
-[ext_resource type="Script" path="res://level_manager.gd" id="1_f2txt"]
+[ext_resource type="Script" uid="uid://ca51xv8rofmne" path="res://level_manager.gd" id="1_f2txt"]
 [ext_resource type="PackedScene" uid="uid://dkl0g4g78ogfl" path="res://player.tscn" id="1_oi3di"]
 [ext_resource type="PackedScene" uid="uid://cr57xdotebeg8" path="res://cue.tscn" id="2_0b4ue"]
 [ext_resource type="PackedScene" uid="uid://de5xyvcpch6f" path="res://pocket.tscn" id="3_1ainy"]
@@ -52,24 +52,6 @@ size = 24.0
 [node name="Player" parent="." instance=ExtResource("1_oi3di")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2308, 0, 0)
 
-[node name="Pocket" parent="." instance=ExtResource("3_1ainy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9988, 0, 10.0437)
-
-[node name="Pocket2" parent="." instance=ExtResource("3_1ainy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.556)
-
-[node name="Pocket3" parent="." instance=ExtResource("3_1ainy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.8225, 0, 9.81979)
-
-[node name="Pocket4" parent="." instance=ExtResource("3_1ainy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9064, 0, -10.072)
-
-[node name="Pocket5" parent="." instance=ExtResource("3_1ainy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8772, 0, -9.98808)
-
-[node name="Pocket6" parent="." instance=ExtResource("3_1ainy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.5747)
-
 [node name="Cue" parent="." instance=ExtResource("2_0b4ue")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9203, 0, 0)
 
@@ -109,8 +91,9 @@ is_cue = false
 ball_number = 6
 
 [node name="Ball8" parent="Balls" instance=ExtResource("3_f2txt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.605, 0, 1.54683)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.5847, 0, 1.54683)
 is_cue = false
+is_8_ball = true
 ball_number = 10
 
 [node name="Ball9" parent="Balls" instance=ExtResource("3_f2txt")]
@@ -169,3 +152,23 @@ transform = Transform3D(-4.37114e-08, 0, -40, 0, 1, 0, 1, 0, -1.74846e-06, 0, 0,
 
 [node name="NorthWall" parent="TableWalls" instance=ExtResource("4_0b4ue")]
 transform = Transform3D(-4.37114e-08, 0, -40, 0, 1, 0, 1, 0, -1.74846e-06, 0, 0, -10)
+
+[node name="Pockets" type="Node3D" parent="."]
+
+[node name="Pocket" parent="Pockets" instance=ExtResource("3_1ainy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9988, 0, 10.0437)
+
+[node name="Pocket2" parent="Pockets" instance=ExtResource("3_1ainy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.556)
+
+[node name="Pocket3" parent="Pockets" instance=ExtResource("3_1ainy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.8225, 0, 9.81979)
+
+[node name="Pocket4" parent="Pockets" instance=ExtResource("3_1ainy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9064, 0, -10.072)
+
+[node name="Pocket5" parent="Pockets" instance=ExtResource("3_1ainy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8772, 0, -9.98808)
+
+[node name="Pocket6" parent="Pockets" instance=ExtResource("3_1ainy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.5747)

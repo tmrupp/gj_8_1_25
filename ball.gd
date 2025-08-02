@@ -4,6 +4,7 @@ extends Node3D
 @onready var body = $Body
 @onready var hit_point = $/root/Level/HitPoint
 @export var is_cue = true
+@export var is_8_ball = false
 @export var friction = 100.0
 @export var ball_number : int = 1
 var start_position
@@ -37,20 +38,28 @@ func collision(_other):
 	hit(state.get_contact_local_position(0))
 
 func hit (point):
-	var direction = position - point
+	var direction = body.position - point
 	#print("hit @ ", point, " from ", position, " direction ", direction)
 	body.apply_impulse(direction.normalized()*10)
 	#print(linear_velocity)
 	
 func _input(event):
 	if hit_point != null and is_cue and event is InputEventMouseButton and event.is_pressed():
-		var space_state = get_world_3d().direct_space_state
-		# use global coordinates, not local to node
-		print("global_position=", global_position)
-		var query = PhysicsRayQueryParameters3D.create(hit_point.global_position, global_position)
-		var result = space_state.intersect_ray(query)
-		if "position" in result:
-			hit(result["position"])
+		if event.button_index == MOUSE_BUTTON_RIGHT:
+			print("Hit point originally set to: ", hit_point.global_position)
+			var mouse_position = get_viewport().get_mouse_position()
+			var new_position = get_viewport().get_camera_3d().project_position(mouse_position, 10)
+			new_position.y = 0  # Keep the y-coordinate of the hit point
+			hit_point.global_position = new_position
+			print("Hit point set to: ", hit_point.global_position)
 		else:
-			print("No hit detected")
-		print("Mouse clicked at: ", hit_point.global_position, " - Applying force to body")
+			var space_state = get_world_3d().direct_space_state
+			# use global coordinates, not local to node
+			print("global_position=", global_position)
+			var query = PhysicsRayQueryParameters3D.create(hit_point.global_position, body.global_position)
+			var result = space_state.intersect_ray(query)
+			if "position" in result:
+				hit(result["position"])
+			else:
+				print("No hit detected")
+			print("Mouse clicked at: ", hit_point.global_position, " - Applying force to body")
