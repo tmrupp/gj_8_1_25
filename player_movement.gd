@@ -20,22 +20,25 @@ func _physics_process(delta: float) -> void:
 		# print("local collision point: ", local_collision_position)
 		
 		var local_collision_normal : Vector3 = collision_results.get_normal().rotated(Vector3.UP, -collider.rotation.y)
-		print("local_collision normal/pos: ", local_collision_normal, " ", local_collision_position)
+		#print("local_collision normal/pos: ", local_collision_normal, " ", local_collision_position)
 		
 		if local_collision_position.x < -2:
 			if local_collision_normal.z > CUE_ROTATION_NORMAL_CHECK:
-				print("spot1 (clockwise)")
+				#print("spot1 (clockwise)")
 				collider.rotate(Vector3.UP, -CUE_ROTATE_SPEED)
 			elif local_collision_normal.z < -CUE_ROTATION_NORMAL_CHECK:
-				print("spot2 (counterclockwise)")
+				#print("spot2 (counterclockwise)")
 				collider.rotate(Vector3.UP, CUE_ROTATE_SPEED)
 		elif local_collision_position.x > 2:
 			if local_collision_normal.z > CUE_ROTATION_NORMAL_CHECK:
-				print("spot3 (counterclockwise)")
+				#print("spot3 (counterclockwise)")
 				collider.rotate(Vector3.UP, CUE_ROTATE_SPEED)
 			elif local_collision_normal.z < -CUE_ROTATION_NORMAL_CHECK:
-				print("spot4 (clockwise)")
+				#print("spot4 (clockwise)")
 				collider.rotate(Vector3.UP, -CUE_ROTATE_SPEED)
 		else:
-			#translate along opposite of normal
-			collider.position += velocity * delta
+			# translate in direction of player movement
+			#collider.position += velocity * delta
+			
+			# translate along opposite of normal
+			collider.position += collision_results.get_normal() * -SPEED * delta
