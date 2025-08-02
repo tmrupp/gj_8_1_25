@@ -32,7 +32,7 @@ func hit (point):
 	#print(linear_velocity)
 	
 func _input(event):
-	if is_cue and event is InputEventMouseButton and event.is_pressed():
+	if hit_point != null and is_cue and event is InputEventMouseButton and event.is_pressed():
 		var space_state = get_world_3d().direct_space_state
 		# use global coordinates, not local to node
 		print("global_position=", global_position)

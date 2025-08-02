@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbgxia2u7ephg"]
+[gd_scene load_steps=5 format=3 uid="uid://ckhdwrcmbjvq2"]
 
 [ext_resource type="Script" uid="uid://cc658ydk0ogg1" path="res://ball.gd" id="1_41u45"]
 [ext_resource type="Texture2D" uid="uid://grjpwh88pi6e" path="res://BasicSprites/Circle.svg" id="2_ktgx5"]
@@ -21,6 +21,7 @@ physics_material_override = SubResource("PhysicsMaterial_41u45")
 shape = SubResource("CylinderShape3D_d7xqy")
 
 [node name="Sprite" type="Sprite3D" parent="Body"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 1, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 axis = 1
+render_priority = 1
 texture = ExtResource("2_ktgx5")
