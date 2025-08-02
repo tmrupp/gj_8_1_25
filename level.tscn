@@ -1,3 +1,74 @@
-[gd_scene format=3 uid="uid://bnvmdpk7ha352"]
+[gd_scene load_steps=5 format=3 uid="uid://bnvmdpk7ha352"]
+
+[ext_resource type="PackedScene" uid="uid://cdgc85vgq178b" path="res://player.tscn" id="1_oi3di"]
+[ext_resource type="PackedScene" uid="uid://dbxu0c75ushvq" path="res://cue.tscn" id="2_0b4ue"]
+[ext_resource type="PackedScene" uid="uid://ckhdwrcmbjvq2" path="res://ball.tscn" id="3_f2txt"]
+[ext_resource type="PackedScene" uid="uid://b7fdn3dvfmeyj" path="res://wall.tscn" id="4_0b4ue"]
 
 [node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 16, 0)
+projection = 1
+size = 24.0
+
+[node name="Player" parent="." instance=ExtResource("1_oi3di")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2308, 0, 0)
+
+[node name="Cue" parent="." instance=ExtResource("2_0b4ue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9203, 0, 0)
+
+[node name="Ball" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.99851, 0, 0)
+
+[node name="Ball2" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.931, 0, 0)
+is_cue = false
+
+[node name="Ball3" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.824, 0, -0.515)
+is_cue = false
+
+[node name="Ball4" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.824, 0, 0.515)
+is_cue = false
+
+[node name="Ball5" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.715, 0, -1.03101)
+is_cue = false
+
+[node name="Ball6" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.715, 0, 0)
+is_cue = false
+
+[node name="Ball7" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.715, 0, 1.02866)
+is_cue = false
+
+[node name="Ball8" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.605, 0, 1.54683)
+is_cue = false
+
+[node name="Ball9" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.605, 0, 0.515)
+is_cue = false
+
+[node name="Ball10" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.60531, 0, -0.515)
+is_cue = false
+
+[node name="Ball11" parent="." instance=ExtResource("3_f2txt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.605, 0, -1.54566)
+is_cue = false
+
+[node name="EastWall" parent="." instance=ExtResource("4_0b4ue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 20, 19.96, 0, 0)
+
+[node name="WestWall" parent="." instance=ExtResource("4_0b4ue")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 20, -19.965, 0, 0)
+
+[node name="SouthWall" parent="." instance=ExtResource("4_0b4ue")]
+transform = Transform3D(-4.37114e-08, 0, -40, 0, 1, 0, 1, 0, -1.74846e-06, 0, 0, 10)
+
+[node name="NorthWall" parent="." instance=ExtResource("4_0b4ue")]
+transform = Transform3D(-4.37114e-08, 0, -40, 0, 1, 0, 1, 0, -1.74846e-06, 0, 0, -10)

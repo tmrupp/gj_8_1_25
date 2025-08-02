@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbxu0c75ushvq"]
+[gd_scene load_steps=4 format=3 uid="uid://dbxu0c75ushvq"]
 
 [ext_resource type="Texture2D" uid="uid://oi4emc4hgg08" path="res://BasicSprites/Square.svg" id="1_nykms"]
+[ext_resource type="Script" uid="uid://cpcnxoonx2mm" path="res://cue.gd" id="1_suyr1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2bjar"]
 size = Vector3(2.048, 1, 0.102)
@@ -8,6 +9,7 @@ size = Vector3(2.048, 1, 0.102)
 [node name="Cue" type="StaticBody3D"]
 axis_lock_angular_x = true
 axis_lock_angular_z = true
+script = ExtResource("1_suyr1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_2bjar")
@@ -24,3 +26,7 @@ modulate = Color(0.93877, 0.713277, 0.472478, 1)
 axis = 1
 render_priority = 1
 texture = ExtResource("1_nykms")
+
+[node name="RayCast3D" type="RayCast3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.971119, 0, 0)
+target_position = Vector3(0.6, 0, 0)
