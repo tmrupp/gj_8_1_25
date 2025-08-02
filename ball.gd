@@ -5,6 +5,7 @@ extends Node3D
 @onready var hit_point = $"../HitPoint"
 @export var is_cue = true
 @export var friction = 100.0
+@export var ball_number : int = 1
 
 func _ready():
 	body.connect("body_entered", collision)

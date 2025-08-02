@@ -1,7 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckhdwrcmbjvq2"]
+[gd_scene load_steps=22 format=3 uid="uid://ckhdwrcmbjvq2"]
 
 [ext_resource type="Script" uid="uid://cc658ydk0ogg1" path="res://ball.gd" id="1_41u45"]
 [ext_resource type="Texture2D" uid="uid://grjpwh88pi6e" path="res://BasicSprites/Circle.svg" id="2_ktgx5"]
+[ext_resource type="PackedScene" uid="uid://djdhjtfsgugvy" path="res://3D Assets/CueBall.glb" id="3_ce0bl"]
+[ext_resource type="Script" uid="uid://br1qyyaj5jhk5" path="res://show_correct_ball.gd" id="3_of1j4"]
+[ext_resource type="PackedScene" uid="uid://djhyx80i1pknv" path="res://3D Assets/1Ball.glb" id="4_of1j4"]
+[ext_resource type="PackedScene" uid="uid://pndc6e0kwuw3" path="res://3D Assets/2Ball.glb" id="5_ry73i"]
+[ext_resource type="PackedScene" uid="uid://bx06cbt2ns5yx" path="res://3D Assets/3Ball.glb" id="6_fa2nk"]
+[ext_resource type="PackedScene" uid="uid://cf3d7i3lxw788" path="res://3D Assets/4Ball.glb" id="7_rqepa"]
+[ext_resource type="PackedScene" uid="uid://dy034brx2l8ko" path="res://3D Assets/5Ball.glb" id="8_esq11"]
+[ext_resource type="PackedScene" uid="uid://dtdrx5ylot78j" path="res://3D Assets/6Ball.glb" id="9_6v5jr"]
+[ext_resource type="PackedScene" uid="uid://cv6366eioxd86" path="res://3D Assets/7Ball.glb" id="10_qj8p2"]
+[ext_resource type="PackedScene" uid="uid://c3wprsrponhev" path="res://3D Assets/8Ball.glb" id="11_m0dfq"]
+[ext_resource type="PackedScene" uid="uid://dtmic8phah0ec" path="res://3D Assets/9Ball.glb" id="12_ko8cu"]
+[ext_resource type="PackedScene" uid="uid://bf0wbvmolv40m" path="res://3D Assets/10Ball.glb" id="13_0lv2y"]
+[ext_resource type="PackedScene" uid="uid://c288anhje0vqs" path="res://3D Assets/11Ball.glb" id="14_xgpbv"]
+[ext_resource type="PackedScene" uid="uid://cmu3qml7uvxph" path="res://3D Assets/12Ball.glb" id="15_u32yx"]
+[ext_resource type="PackedScene" uid="uid://d2fw0mo8o4qoa" path="res://3D Assets/13Ball.glb" id="16_d55jd"]
+[ext_resource type="PackedScene" uid="uid://fjeb4fud8crx" path="res://3D Assets/14Ball.glb" id="17_pmvr8"]
+[ext_resource type="PackedScene" uid="uid://cdmax7s601ysk" path="res://3D Assets/15Ball.glb" id="18_7jvvu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_41u45"]
 friction = 0.0
@@ -24,6 +41,46 @@ shape = SubResource("CylinderShape3D_d7xqy")
 
 [node name="Sprite" type="Sprite3D" parent="Body"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+visible = false
 axis = 1
 render_priority = 1
 texture = ExtResource("2_ktgx5")
+
+[node name="ModelScale" type="Node3D" parent="Body"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="ModelOffset" type="Node3D" parent="Body/ModelScale"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
+script = ExtResource("3_of1j4")
+
+[node name="CueBall" parent="Body/ModelScale/ModelOffset" instance=ExtResource("3_ce0bl")]
+
+[node name="1Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("4_of1j4")]
+
+[node name="2Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("5_ry73i")]
+
+[node name="3Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("6_fa2nk")]
+
+[node name="4Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("7_rqepa")]
+
+[node name="5Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("8_esq11")]
+
+[node name="6Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("9_6v5jr")]
+
+[node name="7Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("10_qj8p2")]
+
+[node name="8Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("11_m0dfq")]
+
+[node name="9Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("12_ko8cu")]
+
+[node name="10Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("13_0lv2y")]
+
+[node name="11Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("14_xgpbv")]
+
+[node name="12Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("15_u32yx")]
+
+[node name="13Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("16_d55jd")]
+
+[node name="14Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("17_pmvr8")]
+
+[node name="15Ball" parent="Body/ModelScale/ModelOffset" instance=ExtResource("18_7jvvu")]
