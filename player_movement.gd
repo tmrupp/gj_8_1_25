@@ -49,6 +49,6 @@ func _physics_process(delta: float) -> void:
 				# translate along opposite of normal
 				#acollider.position += collision_results.get_normal() * -SPEED * delta
 		
-		if collision_results.get_collider().get_node("..").name.substr(0, 4) == "Ball":
+		if collision_results.get_collider().get_node("..").is_in_group("balls"):
 			level.report_player_foul()
 			#velocity = Vector3.ZERO
