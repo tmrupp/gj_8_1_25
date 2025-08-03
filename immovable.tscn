@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc81qsifyjea4"]
+
+[ext_resource type="PackedScene" uid="uid://deiaohsl1vc2u" path="res://3D Assets/GoldBar.glb" id="1_d3e5x"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d7xqy"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xalrb"]
+size = Vector3(0.262939, 0.100533, 0.530388)
+
+[node name="Wall" type="Node3D"]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_d7xqy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000854492, 0.0503851, -0.00252604)
+shape = SubResource("BoxShape3D_xalrb")
+
+[node name="GoldBar" parent="." instance=ExtResource("1_d3e5x")]

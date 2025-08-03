@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8el65qgq75oi"]
+
+[ext_resource type="Script" uid="uid://uqiin7q5gs8k" path="res://pushable.gd" id="1_gt7b8"]
+[ext_resource type="PackedScene" uid="uid://cvdm5gbxy87iw" path="res://3D Assets/MoneyStack.glb" id="2_v7lw0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v5j5c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5pxul"]
+size = Vector3(1.03107, 0.997971, 2.45628)
+
+[node name="Pushable" type="Node3D"]
+script = ExtResource("1_gt7b8")
+
+[node name="Body" type="RigidBody3D" parent="."]
+axis_lock_angular_y = true
+physics_material_override = SubResource("PhysicsMaterial_v5j5c")
+freeze = true
+linear_damp = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00192261, 0.504967, -0.0392685)
+shape = SubResource("BoxShape3D_5pxul")
+
+[node name="MoneyStack" parent="Body" instance=ExtResource("2_v7lw0")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
