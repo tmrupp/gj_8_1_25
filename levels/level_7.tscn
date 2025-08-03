@@ -3,16 +3,16 @@
 [ext_resource type="Script" uid="uid://ca51xv8rofmne" path="res://level_manager.gd" id="1_4pmw3"]
 [ext_resource type="AudioStream" uid="uid://c1y0khfclaxee" path="res://Audio/BallHit5.mp3" id="2_38k6x"]
 [ext_resource type="AudioStream" uid="uid://bbcpa085f31q5" path="res://Audio/BallHit6.mp3" id="3_cl460"]
-[ext_resource type="PackedScene" uid="uid://dkl0g4g78ogfl" path="res://player.tscn" id="4_sbxnr"]
 [ext_resource type="PackedScene" uid="uid://c2wfyu7tpds25" path="res://player_first_third_person.tscn" id="5_xp58y"]
-[ext_resource type="PackedScene" uid="uid://cr57xdotebeg8" path="res://cue.tscn" id="6_ieh1o"]
 [ext_resource type="PackedScene" uid="uid://ckhdwrcmbjvq2" path="res://ball.tscn" id="7_ydmfm"]
-[ext_resource type="PackedScene" uid="uid://bahpyc15wjbob" path="res://hit_point.tscn" id="8_nwhq7"]
-[ext_resource type="PackedScene" uid="uid://b7fdn3dvfmeyj" path="res://wall.tscn" id="9_02co5"]
+[ext_resource type="PackedScene" path="res://hit_point.tscn" id="8_nwhq7"]
+[ext_resource type="PhysicsMaterial" uid="uid://clu4t8sedukaw" path="res://table_top.tres" id="9_4pmw3"]
 [ext_resource type="PackedScene" uid="uid://o14owkbown13" path="res://pocket.tscn" id="10_3i5lu"]
+[ext_resource type="PhysicsMaterial" uid="uid://ch2bb6f8y6i2n" path="res://table_wall.tres" id="10_38k6x"]
+[ext_resource type="PhysicsMaterial" uid="uid://riwnh5obo56h" path="res://back_of_pocket_phys.tres" id="11_cl460"]
 [ext_resource type="PackedScene" uid="uid://bupwjyx4deihm" path="res://3D Assets/PoolTable.glb" id="11_k2juo"]
-[ext_resource type="PackedScene" uid="uid://c8el65qgq75oi" path="res://pushable.tscn" id="13_4pmw3"]
-[ext_resource type="PackedScene" uid="uid://dc81qsifyjea4" path="res://immovable.tscn" id="13_lpckt"]
+[ext_resource type="PackedScene" path="res://pushable.tscn" id="13_4pmw3"]
+[ext_resource type="PackedScene" path="res://immovable.tscn" id="13_lpckt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f2txt"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -27,11 +27,11 @@ background_mode = 2
 sky = SubResource("Sky_1ainy")
 tonemap_mode = 2
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h6smj"]
-rough = true
+[sub_resource type="BoxShape3D" id="BoxShape3D_sbxnr"]
+size = Vector3(2.62337, 0.5, 4.748)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_h6smj"]
-size = Vector3(3.96527, 0.499512, 6.00092)
+[sub_resource type="BoxShape3D" id="BoxShape3D_xp58y"]
+size = Vector3(2.7192, 0.5, 4.63604)
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_4pmw3")
@@ -84,18 +84,8 @@ projection = 1
 current = true
 size = 24.0
 
-[node name="Player" parent="." instance=ExtResource("4_sbxnr")]
-process_mode = 4
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2308, 0, 0)
-visible = false
-
 [node name="Player2" parent="." instance=ExtResource("5_xp58y")]
 transform = Transform3D(0.0065974, 0, -0.999978, 0, 1, 0, 0.999978, 0, 0.0065974, -10.9872, 0, -0.0169393)
-
-[node name="Cue" parent="." instance=ExtResource("6_ieh1o")]
-process_mode = 4
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9203, 0, 0)
-visible = false
 
 [node name="Balls" type="Node3D" parent="."]
 
@@ -113,75 +103,8 @@ ball_number = 8
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -12.5279, 0, -0.899924)
 visible = false
 
-[node name="TableWalls" type="Node3D" parent="."]
-
-[node name="EastWall" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 18.2, 19.496, 0, 0)
-
-[node name="WestWall" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 18.2, -19.4962, 0, 0)
-
-[node name="WestWallPocketA" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(0.791031, 0, 2.07698, 0, 1, 0, -0.611776, 0, 2.68555, -20.4517, 0, -10.3685)
-
-[node name="WestWallPocketB" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(0.791223, 0, -2.07613, 0, 1, 0, 0.611527, 0, 2.6862, -20.452, 0, 10.368)
-
-[node name="EastWallPocketA" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(0.791223, 0, -2.07613, 0, 1, 0, 0.611527, 0, 2.6862, 20.452, 0, -10.368)
-
-[node name="EastWallPocketB" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(0.791223, 0, 2.07613, 0, 1, 0, -0.611527, 0, 2.6862, 20.452, 0, 10.368)
-
-[node name="SouthWallA" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(-4.40611e-08, 0, -15.45, 0, 1.008, 0, 1.008, 0, -6.75341e-07, -9.517, 0, 11.1963)
-
-[node name="SouthWallAPocketA" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(0.745476, 0, -2.26288, 0, 1, 0, 0.666532, 0, 2.53089, -18.212, 0, 12.372)
-
-[node name="SouthWallAPocketB" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(0.849893, 0, 1.78902, 0, 1, 0, -0.526956, 0, 2.88539, -1.11, 0, 12.448)
-
-[node name="SouthWallB" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(-4.39299e-08, 0, -15.4, 0, 1.005, 0, 1.005, 0, -6.73155e-07, 9.517, 0, 11.196)
-
-[node name="SouthWallBPocketA" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(0.849893, 0, -1.78902, 0, 1, 0, 0.526956, 0, 2.88539, 1.11, 0, 12.448)
-
-[node name="SouthWallBPocketB" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(0.745476, 0, 2.26288, 0, 1, 0, -0.666532, 0, 2.53089, 18.212, 0, 12.372)
-
-[node name="NorthWallA" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(-4.40611e-08, 0, -15.45, 0, 1.008, 0, 1.008, 0, -6.75341e-07, -9.517, 0, -11.196)
-
-[node name="NorthWallAPocketA" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(0.745348, 0, 2.26336, 0, 1, 0, -0.666676, 0, 2.53046, -18.2118, 0, -12.3717)
-
-[node name="NorthWallAPocketB" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(0.850012, 0, -1.78836, 0, 1, 0, 0.526763, 0, 2.88579, -1.10968, 0, -12.4481)
-
-[node name="NorthWallB" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(-4.39299e-08, 0, -15.4, 0, 1.005, 0, 1.005, 0, -6.73155e-07, 9.517, 0, -11.196)
-
-[node name="NorthWallBPocketA" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(0.849893, 0, 1.78902, 0, 1, 0, -0.526956, 0, 2.88539, 1.11, 0, -12.448)
-
-[node name="NorthWallBPocketB" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(0.745476, 0, -2.26288, 0, 1, 0, 0.666532, 0, 2.53089, 18.212, 0, -12.372)
-
-[node name="CornerWallNorthWest" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(0.64659, 0, -2.58983, 0, 1, 0, 0.762838, 0, 2.19517, -20.4171, 0, -12.5744)
-
-[node name="CornerWallSouthWest" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(0.64679, 0, 2.58926, 0, 1, 0, -0.762668, 0, 2.19585, -20.417, 0, 12.574)
-
-[node name="CornerWallSouthEast" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(0.64679, 0, -2.58926, 0, 1, 0, 0.762668, 0, 2.19585, 20.417, 0, 12.574)
-
-[node name="CornerWallNorthEast" parent="TableWalls" instance=ExtResource("9_02co5")]
-transform = Transform3D(0.64679, 0, 2.58926, 0, 1, 0, -0.762668, 0, 2.19585, 20.417, 0, -12.574)
-
 [node name="Pockets" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 0)
 
 [node name="Pocket" parent="Pockets" instance=ExtResource("10_3i5lu")]
 transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 19.388, 0, 11.397)
@@ -205,11 +128,73 @@ transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 0, 0, -11.936)
 transform = Transform3D(-3.49691e-07, 0, 8, 0, 8, 0, -8, 0, -3.49691e-07, 0, -0.5, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PoolTable"]
-physics_material_override = SubResource("PhysicsMaterial_h6smj")
+physics_material_override = ExtResource("9_4pmw3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PoolTable/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0133362, -0.250244, -0.00253296)
-shape = SubResource("BoxShape3D_h6smj")
+[node name="TableFlatA" type="CollisionShape3D" parent="PoolTable/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000125051, -0.25, -3.1225e-17)
+shape = SubResource("BoxShape3D_sbxnr")
+
+[node name="TableFlatB" type="CollisionShape3D" parent="PoolTable/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000711441, -0.25, 0.00307941)
+shape = SubResource("BoxShape3D_xp58y")
+
+[node name="StaticBodyWalls" type="StaticBody3D" parent="PoolTable"]
+physics_material_override = ExtResource("10_38k6x")
+
+[node name="NorthWallA" type="CollisionPolygon3D" parent="PoolTable/StaticBodyWalls"]
+transform = Transform3D(0.125, 0, 0, 0, -5.46392e-09, 0.125, 0, -0.125, -5.46392e-09, 1.06883, 0.05, -1.70633)
+depth = 2.0
+polygon = PackedVector2Array(2.24491, 3.78619, 3.28595, 4.70781, 4.67174, 3.58708, 4.67233, -11.2724, 2.73884, -12.4361, 2.08802, -12.0357)
+
+[node name="NorthWallB" type="CollisionPolygon3D" parent="PoolTable/StaticBodyWalls"]
+transform = Transform3D(0.125, 0, 0, 0, 5.46392e-09, 0.125, 0, 0.125, -5.46392e-09, 1.069, 0.05, 1.706)
+depth = 2.0
+polygon = PackedVector2Array(2.24491, 3.78619, 3.28595, 4.70781, 4.67174, 3.58708, 4.67233, -11.2724, 2.73884, -12.4361, 2.08802, -12.0357)
+
+[node name="SouthWallA" type="CollisionPolygon3D" parent="PoolTable/StaticBodyWalls"]
+transform = Transform3D(-0.125, 0, 0, 0, -5.46392e-09, 0.125, 0, -0.125, -5.46392e-09, -1.069, 0.05, -1.706)
+depth = 2.0
+polygon = PackedVector2Array(2.24491, 3.78619, 3.28595, 4.70781, 4.67174, 3.58708, 4.67233, -11.2724, 2.73884, -12.4361, 2.08802, -12.0357)
+
+[node name="SouthWallB" type="CollisionPolygon3D" parent="PoolTable/StaticBodyWalls"]
+transform = Transform3D(-0.125, -1.09278e-08, 4.77671e-16, 0, 5.46392e-09, 0.125, -1.09278e-08, 0.125, -5.46392e-09, -1.069, 0.05, 1.706)
+depth = 2.0
+polygon = PackedVector2Array(2.24491, 3.78619, 3.28595, 4.70781, 4.67174, 3.58708, 4.67233, -11.2724, 2.73884, -12.4361, 2.08802, -12.0357)
+
+[node name="WestWall" type="CollisionPolygon3D" parent="PoolTable/StaticBodyWalls"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.3, 0)
+polygon = PackedVector2Array(1.29613, 2.47664, 1.15788, 2.6895, -1.15838, 2.68871, -1.2941, 2.47926, -1.16255, 2.3743, 1.163, 2.374)
+
+[node name="EastWall" type="CollisionPolygon3D" parent="PoolTable/StaticBodyWalls"]
+transform = Transform3D(1, 0, 0, 0, 4.37114e-08, 1, 0, 1, -4.37114e-08, 0, -0.3, 0)
+polygon = PackedVector2Array(1.29613, 2.47664, 1.15788, 2.6895, -1.15838, 2.68871, -1.2941, 2.47926, -1.16255, 2.3743, 1.163, 2.374)
+
+[node name="StaticBodyPockets" type="StaticBody3D" parent="PoolTable"]
+physics_material_override = ExtResource("11_cl460")
+
+[node name="NorthWestCorner" type="CollisionPolygon3D" parent="PoolTable/StaticBodyPockets"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+polygon = PackedVector2Array(1.29294, 2.48218, 1.40494, 2.58424, 1.50589, 2.57078, 1.58281, 2.48617, 1.58897, 2.38534, 1.49186, 2.2892, 1.65107, 2.15831, 1.80202, 2.72462, 1.16938, 2.67078)
+
+[node name="NorthEastCorner" type="CollisionPolygon3D" parent="PoolTable/StaticBodyPockets"]
+transform = Transform3D(1, 0, 0, 0, 4.37114e-08, 1, 0, 1, -4.37114e-08, 0, 0, 0)
+polygon = PackedVector2Array(1.29294, 2.48218, 1.40494, 2.58424, 1.50589, 2.57078, 1.58281, 2.48617, 1.58897, 2.38534, 1.49186, 2.2892, 1.65107, 2.15831, 1.80202, 2.72462, 1.16938, 2.67078)
+
+[node name="SouthWestCorner" type="CollisionPolygon3D" parent="PoolTable/StaticBodyPockets"]
+transform = Transform3D(-1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+polygon = PackedVector2Array(1.29294, 2.48218, 1.40494, 2.58424, 1.50589, 2.57078, 1.58281, 2.48617, 1.58897, 2.38534, 1.49186, 2.2892, 1.65107, 2.15831, 1.80202, 2.72462, 1.16938, 2.67078)
+
+[node name="SouthEastCorner" type="CollisionPolygon3D" parent="PoolTable/StaticBodyPockets"]
+transform = Transform3D(-1, 0, 0, 0, 4.37114e-08, 1, 0, 1, -4.37114e-08, 0, 0, 0)
+polygon = PackedVector2Array(1.29294, 2.48218, 1.40494, 2.58424, 1.50589, 2.57078, 1.58281, 2.48617, 1.58897, 2.38534, 1.49186, 2.2892, 1.65107, 2.15831, 1.80202, 2.72462, 1.16938, 2.67078)
+
+[node name="NorthMiddle" type="CollisionPolygon3D" parent="PoolTable/StaticBodyPockets"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+polygon = PackedVector2Array(1.45, 0.14, 1.564, 0.14, 1.65, 0, 1.565, -0.14, 1.45, -0.14, 1.41873, -0.156543, 1.6603, -0.313536, 1.9674, 8.48777e-05, 1.65115, 0.327551, 1.419, 0.157)
+
+[node name="SouthMiddle" type="CollisionPolygon3D" parent="PoolTable/StaticBodyPockets"]
+transform = Transform3D(-1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+polygon = PackedVector2Array(1.45, 0.14, 1.564, 0.14, 1.65, 0, 1.565, -0.14, 1.45, -0.14, 1.41873, -0.156543, 1.6603, -0.313536, 1.9674, 8.48777e-05, 1.65115, 0.327551, 1.419, 0.157)
 
 [node name="GoldBar" parent="." instance=ExtResource("13_lpckt")]
 transform = Transform3D(5.5, 0, -0.00489044, 0, 5.5, 0, 0.00489044, 0, 5.5, -9.03275, -0.499999, 1.90227)
