@@ -397,6 +397,7 @@ size_flags_vertical = 3
 text = "Blah"
 
 [node name="Pushable" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.6253, 0, 4.46079)
 script = ExtResource("15_v5j5c")
 
 [node name="Body" type="RigidBody3D" parent="Pushable"]
