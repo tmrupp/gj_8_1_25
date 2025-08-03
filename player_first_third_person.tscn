@@ -9,12 +9,14 @@
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_rtb52"]
 height = 1.0
+radius = 0.41
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xsn2u"]
 transparency = 1
 shading_mode = 0
 
 [sub_resource type="QuadMesh" id="QuadMesh_v0aan"]
+size = Vector2(0.683, 1)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_rtb52")
@@ -38,12 +40,13 @@ modulate = Color(0.34902, 0, 0.0901961, 1)
 texture = ExtResource("1_wki8j")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.2, 0, 0, 0, 1.19708, -0.0837078, 0, 0.0837078, 1.19708, 0, 0.1, 0)
 material_override = SubResource("StandardMaterial3D_xsn2u")
 mesh = SubResource("QuadMesh_v0aan")
 script = ExtResource("3_xsn2u")
 
 [node name="Cue" parent="." instance=ExtResource("3_klx4f")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.286894, 0.0371142, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.24, 0.092, -0.53)
 collision_layer = 0
 collision_mask = 0
 
@@ -52,6 +55,7 @@ script = ExtResource("4_ribdu")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 transparent_bg = true
-size = Vector2i(1800, 1800)
+size = Vector2i(1024, 1500)
 
-[node name="Node3D" parent="SubViewport" instance=ExtResource("6_xsn2u")]
+[node name="Node3D" parent="SubViewport" node_paths=PackedStringArray("velocity_haver") instance=ExtResource("6_xsn2u")]
+velocity_haver = NodePath("../..")

@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @onready var level: Node3D = $"/root/Main/Level"
 @onready var camera: Camera3D # found in ready
+@onready var character_mesh: MeshInstance3D = $MeshInstance3D
 
 @onready var first_person_location: Node3D = $FirstPersonLocation
 @onready var third_person_location: Node3D = $ThirdPersonLocation
@@ -17,6 +18,12 @@ var last_pushable = null
 
 func _ready() -> void:
 	camera = find_child("Camera3D")
+
+func _process(delta: float) -> void:
+	if first_person_is_active:
+		character_mesh.hide()
+	else:
+		character_mesh.show()
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
