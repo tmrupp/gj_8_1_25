@@ -1,0 +1,6 @@
+[gd_resource type="PhysicsMaterial" format=3 uid="uid://riwnh5obo56h"]
+
+[resource]
+rough = true
+bounce = 0.45
+absorbent = true
