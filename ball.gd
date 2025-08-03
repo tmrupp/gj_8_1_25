@@ -7,6 +7,7 @@ extends Node3D
 @export var is_8_ball = false
 @export var friction = 100.0
 @export var ball_number : int = 1
+@export var debugging = false
 var start_position
 
 func _ready():
@@ -50,7 +51,7 @@ func hit_via_vector(direction : Vector3):
 	body.apply_impulse(direction.normalized()*35)
 
 func _input(event):
-	if hit_point != null and is_cue and event is InputEventMouseButton and event.is_pressed():
+	if debugging and hit_point != null and is_cue and event is InputEventMouseButton and event.is_pressed():
 		if event.button_index == MOUSE_BUTTON_RIGHT:
 			print("Hit point originally set to: ", hit_point.global_position)
 			var mouse_position = get_viewport().get_mouse_position()
