@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 const SPEED : float = 7
-@onready var marker: Sprite3D = $"../Marker"
+#@onready var marker: Sprite3D = $"../Marker"
 @onready var cue: StaticBody3D = $"../Cue"
 @onready var level: Node3D = $"/root/Level"
 
@@ -14,9 +14,12 @@ func _physics_process(delta: float) -> void:
 	
 	var collision_results : KinematicCollision3D = move_and_collide(velocity * delta)
 	if collision_results:
+		pass
 		#if not marker == null:
 			#marker.position = collision_results.get_position()
-		#
+		
+		
+		
 		#if collision_results.get_collider().name == "Cue":
 			#var collider : StaticBody3D = collision_results.get_collider()
 			#var local_collision_position = collider.to_local(collision_results.get_position())

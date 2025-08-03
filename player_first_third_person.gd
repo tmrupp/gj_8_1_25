@@ -13,6 +13,8 @@ var mouse_sensitivity = 0.002
 const CUE_ROTATE_SPEED : float = 0.1
 const CUE_ROTATION_NORMAL_CHECK : float = 0.7
 
+var last_pushable = null
+
 func _ready() -> void:
 	camera = find_child("Camera3D")
 
@@ -28,15 +30,37 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
-	var collision_results : KinematicCollision3D = move_and_collide(velocity * delta)
-	if collision_results:
+	var collision : KinematicCollision3D = move_and_collide(velocity * delta)
+	
+	if collision:
+		var body = collision.get_collider()
+		if body.get_parent().is_in_group("pushable"):
+			last_pushable = body
+			var push_direction = collision.get_normal() * -1 # Push away from collision normal
+			body.freeze = false
+			body.apply_central_impulse(push_direction * 1) # 'push_force' is a defined variable
+			return
+			
+	if last_pushable:
+		last_pushable.freeze = true
+		last_pushable = null
 		
-		if collision_results.get_collider().name == "Cue":
-			var collider : StaticBody3D = collision_results.get_collider()
-			var local_collision_position = collider.to_local(collision_results.get_position())
+	
+	if collision:
+		#print("collision.get_collider().get_node(\"..\")=", collision.get_collider().get_node("../"))
+		#if collision_results.get_collider().get_node("..").is_in_group("pushable"):
+			#print("Pushing object: ", collision_results.get_collider().name)
+			#var body : RigidBody3D = collision_results.get_collider()
+			#body.get_parent().global_position += velocity * delta
+			#print("Pushed object to new position: ", body.global_position)
+			## If the collider is a ball, we handle the collision in the ball script
+			#return
+		if collision.get_collider().name == "Cue":
+			var collider : StaticBody3D = collision.get_collider()
+			var local_collision_position = collider.to_local(collision.get_position())
 			# print("local collision point: ", local_collision_position)
 			
-			var local_collision_normal : Vector3 = collision_results.get_normal().rotated(Vector3.UP, -collider.rotation.y)
+			var local_collision_normal : Vector3 = collision.get_normal().rotated(Vector3.UP, -collider.rotation.y)
 			#print("local_collision normal/pos: ", local_collision_normal, " ", local_collision_position)
 			
 			if local_collision_position.x < -0.4:
@@ -63,7 +87,7 @@ func _physics_process(delta: float) -> void:
 				# translate along opposite of normal
 				#acollider.position += collision_results.get_normal() * -SPEED * delta
 		
-		if collision_results.get_collider().get_node("..").is_in_group("balls"):
+		if collision.get_collider().get_node("..").is_in_group("balls"):
 			level.report_player_foul()
 			#velocity = Vector3.ZERO
 
