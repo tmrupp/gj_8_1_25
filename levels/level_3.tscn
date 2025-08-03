@@ -222,3 +222,4 @@ transform = Transform3D(0.641383, 0, -0.767221, 0, 1, 0, 0.767221, 0, 0.641383, 
 
 [node name="Ball" parent="." instance=ExtResource("7_xlghs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.998, -0.00402713, -6.0871)
+is_cue = false

@@ -59,8 +59,8 @@ text = "Exit
 "
 script = ExtResource("4_nrnbx")
 
-[node name="Container" type="Container" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 0)
+[node name="Control3" type="Control" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
@@ -75,6 +75,14 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+
+[node name="Control2" type="Control" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Total Strokes: ???"
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -102,7 +110,7 @@ next_level = ExtResource("8_gd0jp")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Around the Bend"
+text = "The Regular, No Frills"
 script = ExtResource("6_h1wq0")
 next_level = ExtResource("9_4ndjb")
 
@@ -110,7 +118,8 @@ next_level = ExtResource("9_4ndjb")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "The Regular, No Frills"
+text = "Around the Bend
+"
 script = ExtResource("6_h1wq0")
 next_level = ExtResource("10_3ls4m")
 
@@ -126,7 +135,7 @@ next_level = ExtResource("11_5h80m")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Level 1"
+text = "Just Pool"
 script = ExtResource("6_h1wq0")
 next_level = ExtResource("12_w25hu")
 
@@ -134,7 +143,7 @@ next_level = ExtResource("12_w25hu")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Level 1"
+text = "Get Your Money in Order"
 script = ExtResource("6_h1wq0")
 next_level = ExtResource("13_td6mg")
 
@@ -142,7 +151,7 @@ next_level = ExtResource("13_td6mg")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Level 1"
+text = "Follow the Yellow Brick Road"
 script = ExtResource("6_h1wq0")
 next_level = ExtResource("14_guify")
 
@@ -150,6 +159,6 @@ next_level = ExtResource("14_guify")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Level 1"
+text = "Clean Up"
 script = ExtResource("6_h1wq0")
 next_level = ExtResource("15_oil5j")

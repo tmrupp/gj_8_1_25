@@ -1,5 +1,7 @@
 extends Node3D
 
+@onready var main = $/root/Main
+
 var locked_down : bool = true
 var current_lockdown_grace_timer : float = 0
 
@@ -19,6 +21,9 @@ func _process(delta: float) -> void:
 		if not at_least_one_moving_object:
 			set_lockdown(true)
 			#print("locking down")
+
+func end ():
+	main.complete()
 
 func report_player_foul():
 	#print("Foul: player touched a ball directly")

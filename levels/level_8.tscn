@@ -211,16 +211,82 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0133362, -0.250244, -0.0025
 shape = SubResource("BoxShape3D_h6smj")
 
 [node name="GoldBar" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(0.00538043, 0, -5.5, 0, 5.5, 0, 5.5, 0, 0.00538043, 0.0102835, -0.499999, 10.2247)
-
-[node name="GoldBar3" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(-3.32453, 0, -4.3815, 0, 5.5, 0, 4.3815, 0, -3.32453, -17.3983, -0.499999, 9.2299)
-
-[node name="GoldBar4" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(-3.38455, 0, 4.3353, 0, 5.5, 0, -4.3353, 0, -3.38455, -17.3983, -0.499999, -9.22086)
-
-[node name="GoldBar5" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(3.68243, 0, 4.08531, 0, 5.5, 0, -4.08531, 0, 3.68243, 17.5136, -0.499999, -9.19717)
+transform = Transform3D(5.5, 0, 0.00211684, 0, 5.5, 0, -0.00211684, 0, 5.5, 1.682, -0.499999, 0.0882338)
 
 [node name="GoldBar2" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(-0.00288296, 0, 5.5, 0, 5.5, 0, -5.5, 0, -0.00288296, 0.0133076, -0.499999, -10.1177)
+transform = Transform3D(5.5, 0, 0.00211684, 0, 5.5, 0, -0.00211684, 0, 5.5, 1.682, -0.499999, 0.0882338)
+
+[node name="GoldBar3" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(0.0679665, 0, -5.49958, 0, 5.5, 0, 5.49958, 0, 0.0679665, -3.11664, -0.499999, -1.51131)
+
+[node name="GoldBar4" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(5.5, 0, 0.00211684, 0, 5.5, 0, -0.00211684, 0, 5.5, -2.44789, -0.499999, -3.77055)
+
+[node name="GoldBar5" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(0.0082607, 0, -5.5, 0, 5.5, 0, 5.5, 0, 0.0082607, 0.722196, -0.499999, -9.41716)
+
+[node name="GoldBar12" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(0.0082607, 0, -5.5, 0, 5.5, 0, 5.5, 0, 0.0082607, 3.68285, -0.499999, -9.39348)
+
+[node name="GoldBar13" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(0.0082607, 0, -5.5, 0, 5.5, 0, 5.5, 0, 0.0082607, 6.64349, -0.499999, -9.44085)
+
+[node name="GoldBar14" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(0.0082607, 0, -5.5, 0, 5.5, 0, 5.5, 0, 0.0082607, 2.42753, -0.499999, -4.96434)
+
+[node name="GoldBar15" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(0.0082607, 0, -5.5, 0, 5.5, 0, 5.5, 0, 0.0082607, 5.34081, -0.499999, -4.96434)
+
+[node name="GoldBar16" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(0.0082607, 0, -5.5, 0, 5.5, 0, 5.5, 0, 0.0082607, 8.25409, -0.499999, -4.96434)
+
+[node name="GoldBar17" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(-5.49993, 0, -0.0283233, 0, 5.5, 0, 0.0283233, 0, -5.49993, 9.01201, -0.499999, -2.7853)
+
+[node name="GoldBar18" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(-5.49993, 0, -0.0283233, 0, 5.5, 0, 0.0283233, 0, -5.49993, 9.01201, -0.499999, 0.151661)
+
+[node name="GoldBar19" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(-5.49993, 0, -0.0283233, 0, 5.5, 0, 0.0283233, 0, -5.49993, 9.05938, -0.499999, 3.04126)
+
+[node name="GoldBar20" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(-0.0116204, 0, 5.49999, 0, 5.5, 0, -5.49999, 0, -0.0116204, 9.58045, -0.499999, -9.41716)
+
+[node name="GoldBar21" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(4.2109, 0, 3.53813, 0, 5.5, 0, -3.53813, 0, 4.2109, 12.5411, -0.499999, -8.11447)
+
+[node name="GoldBar22" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(5.49986, 0, -0.0395433, 0, 5.5, 0, 0.0395433, 0, 5.49986, 13.678, -0.499999, -5.10645)
+
+[node name="GoldBar23" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(5.49975, 0, -0.052406, 0, 5.5, 0, 0.052406, 0, 5.49975, 13.7254, -0.499999, -2.1458)
+
+[node name="GoldBar24" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(5.49975, 0, -0.052406, 0, 5.5, 0, 0.052406, 0, 5.49975, 13.7254, -0.499999, 0.767478)
+
+[node name="GoldBar25" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(5.49975, 0, -0.052406, 0, 5.5, 0, 0.052406, 0, 5.49975, 13.7254, -0.499999, 3.65708)
+
+[node name="GoldBar26" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(5.49996, 0, -0.0209215, 0, 5.5, 0, 0.0209215, 0, 5.49996, 13.7017, -0.499999, 6.47561)
+
+[node name="GoldBar27" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(2.56284, 0, -4.8664, 0, 5.5, 0, 4.8664, 0, 2.56284, -2.35688, -0.499999, -9.41716)
+
+[node name="GoldBar6" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(2.83946, 0, -4.71036, 0, 5.5, 0, 4.71036, 0, 2.83946, 0.178544, -0.499999, 2.93737)
+
+[node name="GoldBar7" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(-0.0242812, 0, -5.49995, 0, 5.5, 0, 5.49995, 0, -0.0242812, -2.93042, -0.499999, 2.7351)
+
+[node name="GoldBar8" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(0.03773, 0, -5.49987, 0, 5.5, 0, 5.49987, 0, 0.03773, -5.92096, -0.499999, 2.7095)
+
+[node name="GoldBar9" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(0.0289949, 0, -5.49993, 0, 5.5, 0, 5.49993, 0, 0.0289949, -6.03421, -0.499999, -1.51131)
+
+[node name="GoldBar10" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(5.49999, 0, 0.0126761, 0, 5.5, 0, -0.0126761, 0, 5.49999, -2.47364, -0.499999, -6.70767)
+
+[node name="GoldBar11" parent="." instance=ExtResource("13_i3mp8")]
+transform = Transform3D(5.5, 0, 0.00211684, 0, 5.5, 0, -0.00211684, 0, 5.5, 1.69479, -0.499999, -2.81654)

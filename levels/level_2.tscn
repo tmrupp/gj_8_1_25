@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dghcmepobk5ir"]
+[gd_scene load_steps=19 format=3 uid="uid://dghcmepobk5ir"]
 
 [ext_resource type="Script" uid="uid://ca51xv8rofmne" path="res://level_manager.gd" id="1_5kfcu"]
 [ext_resource type="AudioStream" uid="uid://c1y0khfclaxee" path="res://Audio/BallHit5.mp3" id="2_i558w"]
@@ -210,8 +210,6 @@ physics_material_override = SubResource("PhysicsMaterial_h6smj")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PoolTable/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0133362, -0.250244, -0.00253296)
 shape = SubResource("BoxShape3D_h6smj")
-
-[node name="Menu" parent="." instance=ExtResource("12_5orea")]
 
 [node name="GoldBar" parent="." instance=ExtResource("18_aocai")]
 transform = Transform3D(3.85575, 0, 3.92214, 0, 5.5, 0, -3.92214, 0, 3.85575, -14.8877, -0.499999, -9.17349)

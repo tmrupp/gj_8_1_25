@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bgtog6kpi8pd0"]
+[gd_scene load_steps=19 format=3 uid="uid://bgtog6kpi8pd0"]
 
 [ext_resource type="Script" uid="uid://ca51xv8rofmne" path="res://level_manager.gd" id="1_4pmw3"]
 [ext_resource type="AudioStream" uid="uid://c1y0khfclaxee" path="res://Audio/BallHit5.mp3" id="2_38k6x"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b7fdn3dvfmeyj" path="res://wall.tscn" id="9_02co5"]
 [ext_resource type="PackedScene" uid="uid://o14owkbown13" path="res://pocket.tscn" id="10_3i5lu"]
 [ext_resource type="PackedScene" uid="uid://bupwjyx4deihm" path="res://3D Assets/PoolTable.glb" id="11_k2juo"]
+[ext_resource type="PackedScene" uid="uid://c8el65qgq75oi" path="res://pushable.tscn" id="13_4pmw3"]
 [ext_resource type="PackedScene" uid="uid://dc81qsifyjea4" path="res://immovable.tscn" id="13_lpckt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f2txt"]
@@ -103,7 +104,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.84518, 0, 0.0783215)
 ball_number = 0
 
 [node name="Ball_8" parent="Balls" instance=ExtResource("7_ydmfm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0523624, 0, 0.0481749)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.15664, 0, -0.0115276)
 is_cue = false
 is_8_ball = true
 ball_number = 8
@@ -211,16 +212,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0133362, -0.250244, -0.0025
 shape = SubResource("BoxShape3D_h6smj")
 
 [node name="GoldBar" parent="." instance=ExtResource("13_lpckt")]
-transform = Transform3D(0.00538043, 0, -5.5, 0, 5.5, 0, 5.5, 0, 0.00538043, 0.0102835, -0.499999, 10.2247)
-
-[node name="GoldBar3" parent="." instance=ExtResource("13_lpckt")]
-transform = Transform3D(-3.32453, 0, -4.3815, 0, 5.5, 0, 4.3815, 0, -3.32453, -17.3983, -0.499999, 9.2299)
-
-[node name="GoldBar4" parent="." instance=ExtResource("13_lpckt")]
-transform = Transform3D(-3.38455, 0, 4.3353, 0, 5.5, 0, -4.3353, 0, -3.38455, -17.3983, -0.499999, -9.22086)
-
-[node name="GoldBar5" parent="." instance=ExtResource("13_lpckt")]
-transform = Transform3D(3.68243, 0, 4.08531, 0, 5.5, 0, -4.08531, 0, 3.68243, 17.5136, -0.499999, -9.19717)
+transform = Transform3D(5.5, 0, -0.00489044, 0, 5.5, 0, 0.00489044, 0, 5.5, -9.03275, -0.499999, 1.90227)
 
 [node name="GoldBar2" parent="." instance=ExtResource("13_lpckt")]
-transform = Transform3D(-0.00288296, 0, 5.5, 0, 5.5, 0, -5.5, 0, -0.00288296, 0.0133076, -0.499999, -10.1177)
+transform = Transform3D(5.5, 0, -0.00489044, 0, 5.5, 0, 0.00489044, 0, 5.5, -9.0029, -0.499999, -1.7396)
+
+[node name="Pushable" parent="." instance=ExtResource("13_4pmw3")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 7.25388, -0.504027, 5.08966)
+
+[node name="Pushable2" parent="." instance=ExtResource("13_4pmw3")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 3.11947, -0.504027, 5.17921)
+
+[node name="Pushable3" parent="." instance=ExtResource("13_4pmw3")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 4.02994, -0.504027, -6.13446)

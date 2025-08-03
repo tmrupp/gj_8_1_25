@@ -2,6 +2,7 @@ extends StaticBody3D
 
 @onready var ray_cast_3d: RayCast3D = $CollisionShape3D/RayCast3D
 @onready var level = $/root/Main/Level
+@onready var main = $/root/Main
 
 const max_cooldown_time : float = 1
 var remaining_cooldown_time = 0
@@ -16,6 +17,7 @@ func shoot():
 		if collider.get_node("..").is_in_group("balls") and collider.get_node("..").is_cue:
 			# print("cue hit against: ", collider.get_node("..").name, " in direction: ", global_basis.x)
 			level.set_lockdown(false)
+			main.add_stroke()
 			#print("unlocking the level")
 			collider.get_node("..").hit_via_vector(global_basis.x)
 			remaining_cooldown_time = max_cooldown_time
