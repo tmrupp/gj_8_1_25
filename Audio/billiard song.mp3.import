@@ -2,7 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://dcr45otaw5ycg"
+uid="uid://ifej1nd3bfqe"
 path="res://.godot/imported/billiard song.mp3-9a8b0da5217c1b2887e314b09e968a79.mp3str"
 
 [deps]
@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/billiard song.mp3-9a8b0da5217c1b2887e314b09e9
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
 bpm=0
 beat_count=0
