@@ -94,11 +94,11 @@ func _physics_process(delta: float) -> void:
 
 func _input(event):
 	# toggle mouse look
-	if event is InputEventKey and event.keycode == KEY_ESCAPE and event.pressed:
-		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		else:
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	#if event is InputEventKey and event.keycode == KEY_ESCAPE and event.pressed:
+		#if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		#else:
+			#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 	# rotate player/camera view with mouse movement
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:

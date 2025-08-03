@@ -14,6 +14,10 @@ func toggle ():
 	visible = not visible
 	$CanvasLayer.visible = visible
 	set_pause()
+	if visible:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	else:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
 	
 func _input(event):
