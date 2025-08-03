@@ -1,7 +1,7 @@
 extends StaticBody3D
 
 @onready var ray_cast_3d: RayCast3D = $CollisionShape3D/RayCast3D
-@onready var level = $/root/Level
+@onready var level = $/root/Main/Level
 
 const max_cooldown_time : float = 1
 var remaining_cooldown_time = 0

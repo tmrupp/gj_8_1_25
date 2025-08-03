@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@onready var level: Node3D = $"/root/Level"
+@onready var level: Node3D = $"/root/Main/Level"
 @onready var camera: Camera3D # found in ready
 
 @onready var first_person_location: Node3D = $FirstPersonLocation

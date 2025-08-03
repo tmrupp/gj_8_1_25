@@ -1,10 +1,8 @@
 extends Control
-@onready var level = $".."
+@onready var level = $/root/Main/Level
 
 func set_pause():
-	
 	level.process_mode = Node.PROCESS_MODE_DISABLED if visible else Node.PROCESS_MODE_INHERIT
-	
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS

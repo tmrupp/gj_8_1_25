@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var area = $Area3D
-@onready var level = $/root/Level
+@onready var level = $/root/Main/Level
 
 func _ready():
 	area.connect("body_entered", _on_body_entered)

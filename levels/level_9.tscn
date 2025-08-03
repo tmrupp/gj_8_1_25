@@ -1,0 +1,226 @@
+[gd_scene load_steps=18 format=3 uid="uid://du6f82dvp3bki"]
+
+[ext_resource type="Script" uid="uid://ca51xv8rofmne" path="res://level_manager.gd" id="1_pf0k2"]
+[ext_resource type="AudioStream" uid="uid://c1y0khfclaxee" path="res://Audio/BallHit5.mp3" id="2_sby73"]
+[ext_resource type="AudioStream" uid="uid://bbcpa085f31q5" path="res://Audio/BallHit6.mp3" id="3_8ka2n"]
+[ext_resource type="PackedScene" uid="uid://dkl0g4g78ogfl" path="res://player.tscn" id="4_rqr00"]
+[ext_resource type="PackedScene" uid="uid://c2wfyu7tpds25" path="res://player_first_third_person.tscn" id="5_5ejc1"]
+[ext_resource type="PackedScene" uid="uid://cr57xdotebeg8" path="res://cue.tscn" id="6_aquxu"]
+[ext_resource type="PackedScene" uid="uid://ckhdwrcmbjvq2" path="res://ball.tscn" id="7_yewj5"]
+[ext_resource type="PackedScene" uid="uid://bahpyc15wjbob" path="res://hit_point.tscn" id="8_gstqd"]
+[ext_resource type="PackedScene" uid="uid://b7fdn3dvfmeyj" path="res://wall.tscn" id="9_xkpiv"]
+[ext_resource type="PackedScene" uid="uid://o14owkbown13" path="res://pocket.tscn" id="10_5i6xy"]
+[ext_resource type="PackedScene" uid="uid://bupwjyx4deihm" path="res://3D Assets/PoolTable.glb" id="11_i311t"]
+[ext_resource type="PackedScene" uid="uid://dc81qsifyjea4" path="res://immovable.tscn" id="13_v1sno"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f2txt"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+energy_multiplier = 0.5
+
+[sub_resource type="Sky" id="Sky_1ainy"]
+sky_material = SubResource("ProceduralSkyMaterial_f2txt")
+
+[sub_resource type="Environment" id="Environment_n6hdu"]
+background_mode = 2
+sky = SubResource("Sky_1ainy")
+tonemap_mode = 2
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_h6smj"]
+rough = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h6smj"]
+size = Vector3(3.96527, 0.499512, 6.00092)
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_pf0k2")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_n6hdu")
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Sound1" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("2_sby73")
+max_polyphony = 15
+
+[node name="Sound2" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("3_8ka2n")
+max_polyphony = 15
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20, 0)
+visible = false
+light_color = Color(1, 0.839216, 0.607843, 1)
+light_energy = 10.0
+shadow_enabled = true
+spot_range = 32.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 12, 20, 0)
+visible = false
+light_color = Color(1, 0.839216, 0.607843, 1)
+light_energy = 10.0
+spot_range = 32.0
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -12, 20, 0)
+visible = false
+light_color = Color(1, 0.839216, 0.607843, 1)
+light_energy = 10.0
+spot_range = 32.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 10, 0)
+light_color = Color(1, 0.839216, 0.607843, 1)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 16, 0)
+projection = 1
+current = true
+size = 24.0
+
+[node name="Player" parent="." instance=ExtResource("4_rqr00")]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2308, 0, 0)
+visible = false
+
+[node name="Player2" parent="." instance=ExtResource("5_5ejc1")]
+transform = Transform3D(0.0065974, 0, -0.999978, 0, 1, 0, 0.999978, 0, 0.0065974, -10.9872, 0, -0.0169393)
+
+[node name="Cue" parent="." instance=ExtResource("6_aquxu")]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9203, 0, 0)
+visible = false
+
+[node name="Balls" type="Node3D" parent="."]
+
+[node name="Ball_Cue" parent="Balls" instance=ExtResource("7_yewj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.84518, 0, 0.0783215)
+ball_number = 0
+
+[node name="Ball_8" parent="Balls" instance=ExtResource("7_yewj5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0523624, 0, 0.0481749)
+is_cue = false
+is_8_ball = true
+ball_number = 8
+
+[node name="HitPoint" parent="." instance=ExtResource("8_gstqd")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -12.5279, 0, -0.899924)
+visible = false
+
+[node name="TableWalls" type="Node3D" parent="."]
+
+[node name="EastWall" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 18.2, 19.496, 0, 0)
+
+[node name="WestWall" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 18.2, -19.4962, 0, 0)
+
+[node name="WestWallPocketA" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(0.791031, 0, 2.07698, 0, 1, 0, -0.611776, 0, 2.68555, -20.4517, 0, -10.3685)
+
+[node name="WestWallPocketB" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(0.791223, 0, -2.07613, 0, 1, 0, 0.611527, 0, 2.6862, -20.452, 0, 10.368)
+
+[node name="EastWallPocketA" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(0.791223, 0, -2.07613, 0, 1, 0, 0.611527, 0, 2.6862, 20.452, 0, -10.368)
+
+[node name="EastWallPocketB" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(0.791223, 0, 2.07613, 0, 1, 0, -0.611527, 0, 2.6862, 20.452, 0, 10.368)
+
+[node name="SouthWallA" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(-4.40611e-08, 0, -15.45, 0, 1.008, 0, 1.008, 0, -6.75341e-07, -9.517, 0, 11.1963)
+
+[node name="SouthWallAPocketA" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(0.745476, 0, -2.26288, 0, 1, 0, 0.666532, 0, 2.53089, -18.212, 0, 12.372)
+
+[node name="SouthWallAPocketB" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(0.849893, 0, 1.78902, 0, 1, 0, -0.526956, 0, 2.88539, -1.11, 0, 12.448)
+
+[node name="SouthWallB" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(-4.39299e-08, 0, -15.4, 0, 1.005, 0, 1.005, 0, -6.73155e-07, 9.517, 0, 11.196)
+
+[node name="SouthWallBPocketA" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(0.849893, 0, -1.78902, 0, 1, 0, 0.526956, 0, 2.88539, 1.11, 0, 12.448)
+
+[node name="SouthWallBPocketB" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(0.745476, 0, 2.26288, 0, 1, 0, -0.666532, 0, 2.53089, 18.212, 0, 12.372)
+
+[node name="NorthWallA" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(-4.40611e-08, 0, -15.45, 0, 1.008, 0, 1.008, 0, -6.75341e-07, -9.517, 0, -11.196)
+
+[node name="NorthWallAPocketA" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(0.745348, 0, 2.26336, 0, 1, 0, -0.666676, 0, 2.53046, -18.2118, 0, -12.3717)
+
+[node name="NorthWallAPocketB" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(0.850012, 0, -1.78836, 0, 1, 0, 0.526763, 0, 2.88579, -1.10968, 0, -12.4481)
+
+[node name="NorthWallB" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(-4.39299e-08, 0, -15.4, 0, 1.005, 0, 1.005, 0, -6.73155e-07, 9.517, 0, -11.196)
+
+[node name="NorthWallBPocketA" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(0.849893, 0, 1.78902, 0, 1, 0, -0.526956, 0, 2.88539, 1.11, 0, -12.448)
+
+[node name="NorthWallBPocketB" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(0.745476, 0, -2.26288, 0, 1, 0, 0.666532, 0, 2.53089, 18.212, 0, -12.372)
+
+[node name="CornerWallNorthWest" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(0.64659, 0, -2.58983, 0, 1, 0, 0.762838, 0, 2.19517, -20.4171, 0, -12.5744)
+
+[node name="CornerWallSouthWest" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(0.64679, 0, 2.58926, 0, 1, 0, -0.762668, 0, 2.19585, -20.417, 0, 12.574)
+
+[node name="CornerWallSouthEast" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(0.64679, 0, -2.58926, 0, 1, 0, 0.762668, 0, 2.19585, 20.417, 0, 12.574)
+
+[node name="CornerWallNorthEast" parent="TableWalls" instance=ExtResource("9_xkpiv")]
+transform = Transform3D(0.64679, 0, 2.58926, 0, 1, 0, -0.762668, 0, 2.19585, 20.417, 0, -12.574)
+
+[node name="Pockets" type="Node3D" parent="."]
+
+[node name="Pocket" parent="Pockets" instance=ExtResource("10_5i6xy")]
+transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 19.388, 0, 11.397)
+
+[node name="Pocket2" parent="Pockets" instance=ExtResource("10_5i6xy")]
+transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 0, 0, 11.936)
+
+[node name="Pocket3" parent="Pockets" instance=ExtResource("10_5i6xy")]
+transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, -19.388, 0, 11.397)
+
+[node name="Pocket4" parent="Pockets" instance=ExtResource("10_5i6xy")]
+transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, -19.388, 0, -11.397)
+
+[node name="Pocket5" parent="Pockets" instance=ExtResource("10_5i6xy")]
+transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 19.388, 0, -11.397)
+
+[node name="Pocket6" parent="Pockets" instance=ExtResource("10_5i6xy")]
+transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 0, 0, -11.936)
+
+[node name="PoolTable" parent="." instance=ExtResource("11_i311t")]
+transform = Transform3D(-3.49691e-07, 0, 8, 0, 8, 0, -8, 0, -3.49691e-07, 0, -0.5, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PoolTable"]
+physics_material_override = SubResource("PhysicsMaterial_h6smj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PoolTable/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0133362, -0.250244, -0.00253296)
+shape = SubResource("BoxShape3D_h6smj")
+
+[node name="GoldBar" parent="." instance=ExtResource("13_v1sno")]
+transform = Transform3D(0.00538043, 0, -5.5, 0, 5.5, 0, 5.5, 0, 0.00538043, 0.0102835, -0.499999, 10.2247)
+
+[node name="GoldBar3" parent="." instance=ExtResource("13_v1sno")]
+transform = Transform3D(-3.32453, 0, -4.3815, 0, 5.5, 0, 4.3815, 0, -3.32453, -17.3983, -0.499999, 9.2299)
+
+[node name="GoldBar4" parent="." instance=ExtResource("13_v1sno")]
+transform = Transform3D(-3.38455, 0, 4.3353, 0, 5.5, 0, -4.3353, 0, -3.38455, -17.3983, -0.499999, -9.22086)
+
+[node name="GoldBar5" parent="." instance=ExtResource("13_v1sno")]
+transform = Transform3D(3.68243, 0, 4.08531, 0, 5.5, 0, -4.08531, 0, 3.68243, 17.5136, -0.499999, -9.19717)
+
+[node name="GoldBar2" parent="." instance=ExtResource("13_v1sno")]
+transform = Transform3D(-0.00288296, 0, 5.5, 0, 5.5, 0, -5.5, 0, -0.00288296, 0.0133076, -0.499999, -10.1177)

@@ -2,8 +2,8 @@ extends Node3D
 
 @onready var collider = $Body/Collider
 @onready var body = $Body
-@onready var hit_point = $/root/Level/HitPoint
-@onready var level = $/root/Level
+@onready var hit_point = $/root/Main/Level/HitPoint
+@onready var level = $/root/Main/Level
 @export var is_cue = true
 @export var is_8_ball = false
 @export var friction = 100.0

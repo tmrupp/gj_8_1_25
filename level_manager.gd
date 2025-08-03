@@ -8,7 +8,7 @@ var all_audio_clips : Array[Node] = []
 
 func _ready() -> void:
 	all_audio_clips = $Audio.find_children("Sound*")
-
+	
 func _process(delta: float) -> void:
 	current_lockdown_grace_timer -= delta
 	if not locked_down and not current_lockdown_grace_timer > 0:
@@ -23,10 +23,6 @@ func _process(delta: float) -> void:
 func report_player_foul():
 	#print("Foul: player touched a ball directly")
 	pass
-	
-func end ():
-	#print("reseting level")
-	get_tree().change_scene_to_file("res://level.tscn")
 
 func set_lockdown(value):
 	locked_down = value

@@ -3,7 +3,7 @@ extends CharacterBody3D
 const SPEED : float = 7
 #@onready var marker: Sprite3D = $"../Marker"
 @onready var cue: StaticBody3D = $"../Cue"
-@onready var level: Node3D = $"/root/Level"
+@onready var level: Node3D = $"/root/Main/Level"
 
 const CUE_ROTATE_SPEED : float = 0.1
 const CUE_ROTATION_NORMAL_CHECK : float = 0.7
