@@ -11,7 +11,7 @@ func _on_body_entered(body):
 	if entity.is_in_group("balls"):
 		if not entity.is_cue:
 			if entity.is_8_ball:
-				level.end()
+				level.call_deferred("end")
 				# print("hooray you win")
 			level.remove_object_from_motion_tracking(body)
 			entity.queue_free()
