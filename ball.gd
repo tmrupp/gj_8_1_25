@@ -3,6 +3,7 @@ extends Node3D
 @onready var collider = $Body/Collider
 @onready var body = $Body
 @onready var hit_point = $/root/Level/HitPoint
+@onready var level = $/root/Level
 @export var is_cue = true
 @export var is_8_ball = false
 @export var friction = 100.0
@@ -22,12 +23,18 @@ func _ready():
 	#body.max_contacts_reported = 2
 	
 	#apply_impulse(Vector3.FORWARD*1200)
+	level.add_object_to_motion_tracking(body)
+	if level.locked_down:
+		lock_down()
 	
 func _process(_delta):
 	# if is_cue:
 	# 	print("position=", position, " body.global_position=", body.global_position)
 		
-	pass
+	if level.locked_down:
+		lock_down()
+	else:
+		unlock_down()
 	
 func _physics_process(delta):
 	#body.apply_force(-body.linear_velocity.normalized()*friction*delta)
@@ -70,3 +77,19 @@ func _input(event):
 			else:
 				print("No hit detected")
 			print("Mouse clicked at: ", hit_point.global_position, " - Applying force to body")
+
+func lock_down():
+	body.axis_lock_angular_x = true
+	body.axis_lock_angular_y = true
+	body.axis_lock_angular_z = true
+	body.axis_lock_linear_x = true
+	body.axis_lock_linear_y = true
+	body.axis_lock_linear_z = true
+
+func unlock_down():
+	body.axis_lock_angular_x = false
+	body.axis_lock_angular_y = false
+	body.axis_lock_angular_z = false
+	body.axis_lock_linear_x = false
+	body.axis_lock_linear_y = false
+	body.axis_lock_linear_z = false

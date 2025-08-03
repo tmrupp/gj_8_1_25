@@ -13,6 +13,7 @@ func _on_body_entered(body):
 			if entity.is_8_ball:
 				level.end()
 				# print("hooray you win")
+			level.remove_object_from_motion_tracking(body)
 			entity.queue_free()
 		else:
 			body.linear_velocity = Vector3.ZERO

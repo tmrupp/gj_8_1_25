@@ -33,6 +33,7 @@ texture = ExtResource("1_nykms")
 [node name="RayCast3D" type="RayCast3D" parent="CollisionShape3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.971119, 0, 0)
 target_position = Vector3(0.6, 0, 0)
+hit_from_inside = true
 
 [node name="Node3D" type="Node3D" parent="CollisionShape3D"]
 transform = Transform3D(-2.99423e-08, 0, 0.685, 0, 0.685, 0, -0.685, 0, -2.99423e-08, 0, 0, 0)
