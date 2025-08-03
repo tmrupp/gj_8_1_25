@@ -1,19 +1,20 @@
-[gd_scene load_steps=20 format=3 uid="uid://bnvmdpk7ha352"]
+[gd_scene load_steps=23 format=3 uid="uid://du86shskgg4nd"]
 
 [ext_resource type="Script" uid="uid://ca51xv8rofmne" path="res://level_manager.gd" id="1_f2txt"]
 [ext_resource type="PackedScene" uid="uid://dkl0g4g78ogfl" path="res://player.tscn" id="1_oi3di"]
 [ext_resource type="PackedScene" uid="uid://cr57xdotebeg8" path="res://cue.tscn" id="2_0b4ue"]
 [ext_resource type="PackedScene" uid="uid://o14owkbown13" path="res://pocket.tscn" id="3_1ainy"]
 [ext_resource type="PackedScene" uid="uid://ckhdwrcmbjvq2" path="res://ball.tscn" id="3_f2txt"]
-[ext_resource type="PackedScene" uid="uid://c2wfyu7tpds25" path="res://player_first_third_person.tscn" id="3_h6smj"]
+[ext_resource type="PackedScene" path="res://player_first_third_person.tscn" id="3_h6smj"]
 [ext_resource type="PackedScene" uid="uid://b7fdn3dvfmeyj" path="res://wall.tscn" id="4_0b4ue"]
-[ext_resource type="PackedScene" path="res://hit_point.tscn" id="6_n6hdu"]
+[ext_resource type="PackedScene" uid="uid://bahpyc15wjbob" path="res://hit_point.tscn" id="6_n6hdu"]
 [ext_resource type="Script" path="res://menu.gd" id="8_i2t4f"]
 [ext_resource type="PackedScene" uid="uid://bupwjyx4deihm" path="res://3D Assets/PoolTable.glb" id="8_km5ld"]
 [ext_resource type="Texture2D" uid="uid://oi4emc4hgg08" path="res://BasicSprites/Square.svg" id="9_2orkt"]
 [ext_resource type="Script" path="res://level_Selector.gd" id="9_8cye3"]
 [ext_resource type="Script" path="res://exit.gd" id="10_2orkt"]
 [ext_resource type="Script" path="res://resume.gd" id="10_aicyk"]
+[ext_resource type="Script" uid="uid://uqiin7q5gs8k" path="res://pushable.gd" id="15_v5j5c"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f2txt"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -33,6 +34,10 @@ rough = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h6smj"]
 size = Vector3(3.96527, 0.499512, 6.00092)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v5j5c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5pxul"]
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_f2txt")
@@ -378,3 +383,17 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Blah"
+
+[node name="Pushable" type="Node3D" parent="."]
+script = ExtResource("15_v5j5c")
+
+[node name="Body" type="RigidBody3D" parent="Pushable"]
+axis_lock_angular_y = true
+physics_material_override = SubResource("PhysicsMaterial_v5j5c")
+freeze = true
+linear_damp = 10.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pushable/Body"]
+shape = SubResource("BoxShape3D_5pxul")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Pushable/Body"]
