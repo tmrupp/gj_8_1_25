@@ -12,7 +12,9 @@ extends Node3D
 var start_position
 
 func _ready():
-	body.connect("body_entered", collision)
+	body.connect("body_exited", func(other):
+		if other.get_parent().is_in_group("balls"):
+			level.play_sound_ball_hit(other))
 	add_to_group("balls")
 	
 	start_position = global_position

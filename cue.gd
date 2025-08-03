@@ -16,6 +16,6 @@ func shoot():
 		if collider.get_node("..").is_in_group("balls") and collider.get_node("..").is_cue:
 			# print("cue hit against: ", collider.get_node("..").name, " in direction: ", global_basis.x)
 			level.set_lockdown(false)
-			print("unlocking the level")
+			#print("unlocking the level")
 			collider.get_node("..").hit_via_vector(global_basis.x)
 			remaining_cooldown_time = max_cooldown_time
