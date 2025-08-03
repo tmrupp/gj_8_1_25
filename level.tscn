@@ -234,6 +234,18 @@ transform = Transform3D(0.849893, 0, 1.78902, 0, 1, 0, -0.526956, 0, 2.88539, 1.
 [node name="NorthWallBPocketB" parent="TableWalls" instance=ExtResource("4_0b4ue")]
 transform = Transform3D(0.745476, 0, -2.26288, 0, 1, 0, 0.666532, 0, 2.53089, 18.212, 0, -12.372)
 
+[node name="CornerWallNorthWest" parent="TableWalls" instance=ExtResource("4_0b4ue")]
+transform = Transform3D(0.64659, 0, -2.58983, 0, 1, 0, 0.762838, 0, 2.19517, -20.4171, 0, -12.5744)
+
+[node name="CornerWallSouthWest" parent="TableWalls" instance=ExtResource("4_0b4ue")]
+transform = Transform3D(0.64679, 0, 2.58926, 0, 1, 0, -0.762668, 0, 2.19585, -20.417, 0, 12.574)
+
+[node name="CornerWallSouthEast" parent="TableWalls" instance=ExtResource("4_0b4ue")]
+transform = Transform3D(0.64679, 0, -2.58926, 0, 1, 0, 0.762668, 0, 2.19585, 20.417, 0, 12.574)
+
+[node name="CornerWallNorthEast" parent="TableWalls" instance=ExtResource("4_0b4ue")]
+transform = Transform3D(0.64679, 0, 2.58926, 0, 1, 0, -0.762668, 0, 2.19585, 20.417, 0, -12.574)
+
 [node name="Pockets" type="Node3D" parent="."]
 
 [node name="Pocket" parent="Pockets" instance=ExtResource("3_1ainy")]
