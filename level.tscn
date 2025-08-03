@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bnvmdpk7ha352"]
+[gd_scene load_steps=25 format=3 uid="uid://bnvmdpk7ha352"]
 
 [ext_resource type="Script" uid="uid://ca51xv8rofmne" path="res://level_manager.gd" id="1_f2txt"]
 [ext_resource type="PackedScene" uid="uid://dkl0g4g78ogfl" path="res://player.tscn" id="1_oi3di"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ckhdwrcmbjvq2" path="res://ball.tscn" id="3_f2txt"]
 [ext_resource type="PackedScene" uid="uid://c2wfyu7tpds25" path="res://player_first_third_person.tscn" id="3_h6smj"]
 [ext_resource type="PackedScene" uid="uid://b7fdn3dvfmeyj" path="res://wall.tscn" id="4_0b4ue"]
+[ext_resource type="AudioStream" uid="uid://dcr45otaw5ycg" path="res://Audio/billiard song.mp3" id="4_ait7k"]
 [ext_resource type="PackedScene" path="res://hit_point.tscn" id="6_n6hdu"]
 [ext_resource type="Script" uid="uid://bvcti16mvkff6" path="res://menu.gd" id="8_i2t4f"]
 [ext_resource type="PackedScene" uid="uid://bupwjyx4deihm" path="res://3D Assets/PoolTable.glb" id="8_km5ld"]
@@ -20,9 +21,11 @@
 [ext_resource type="PackedScene" path="res://pushable.tscn" id="16_fedht"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f2txt"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+sky_top_color = Color(0.573859, 0.890914, 0.982785, 1)
+sky_horizon_color = Color(0.726543, 0.58656, 0.476748, 1)
+ground_bottom_color = Color(0.114147, 0.0576193, 0.0166202, 1)
 ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-energy_multiplier = 0.5
+energy_multiplier = 0.4
 
 [sub_resource type="Sky" id="Sky_1ainy"]
 sky_material = SubResource("ProceduralSkyMaterial_f2txt")
@@ -53,6 +56,12 @@ max_polyphony = 15
 [node name="Sound2" type="AudioStreamPlayer" parent="Audio"]
 stream = ExtResource("3_4c15r")
 max_polyphony = 15
+
+[node name="Music" type="AudioStreamPlayer" parent="Audio"]
+process_mode = 3
+stream = ExtResource("4_ait7k")
+volume_db = -7.0
+autoplay = true
 
 [node name="Lights" type="Node3D" parent="."]
 

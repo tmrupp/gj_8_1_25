@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://1y4ym5d5jsiq"]
+[gd_scene load_steps=10 format=3 uid="uid://1y4ym5d5jsiq"]
 
+[ext_resource type="Script" uid="uid://3bdv1xytlgmu" path="res://control_animation.gd" id="1_0kck5"]
 [ext_resource type="Texture2D" uid="uid://cv2ngka0hljve" path="res://character sprites/polly_left.png" id="1_wofuv"]
 [ext_resource type="Texture2D" uid="uid://h1dqmwy06uii" path="res://character sprites/polly_back.png" id="2_0kck5"]
 
@@ -318,8 +319,9 @@ _data = {
 }
 
 [node name="Node3D" type="Node2D"]
-metadata/_edit_vertical_guides_ = [1800.0]
-metadata/_edit_horizontal_guides_ = [1800.0]
+script = ExtResource("1_0kck5")
+metadata/_edit_vertical_guides_ = [1024.0]
+metadata/_edit_horizontal_guides_ = [1500.0]
 
 [node name="polly_side" type="Node2D" parent="."]
 visible = false
@@ -413,6 +415,8 @@ scale = Vector2(1, 1)
 rest = Transform2D(1, 0, 0, 1, -263, -418)
 
 [node name="polly_back" type="Node2D" parent="."]
+position = Vector2(1400, -200)
+scale = Vector2(-1, 1)
 
 [node name="polygons" type="Polygon2D" parent="polly_back"]
 
