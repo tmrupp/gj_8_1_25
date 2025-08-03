@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8el65qgq75oi"]
+[gd_scene load_steps=5 format=3 uid="uid://cwtnkghthcdea"]
 
-[ext_resource type="Script" uid="uid://uqiin7q5gs8k" path="res://pushable.gd" id="1_gt7b8"]
+[ext_resource type="Script" path="res://pushable.gd" id="1_gt7b8"]
 [ext_resource type="PackedScene" uid="uid://cvdm5gbxy87iw" path="res://3D Assets/MoneyStack.glb" id="2_v7lw0"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v5j5c"]
@@ -12,7 +12,10 @@ size = Vector3(1.03107, 0.997971, 2.45628)
 script = ExtResource("1_gt7b8")
 
 [node name="Body" type="RigidBody3D" parent="."]
+axis_lock_linear_y = true
+axis_lock_angular_x = true
 axis_lock_angular_y = true
+axis_lock_angular_z = true
 physics_material_override = SubResource("PhysicsMaterial_v5j5c")
 freeze = true
 linear_damp = 10.0

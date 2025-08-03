@@ -11,7 +11,7 @@
 [ext_resource type="PhysicsMaterial" uid="uid://ch2bb6f8y6i2n" path="res://table_wall.tres" id="10_38k6x"]
 [ext_resource type="PhysicsMaterial" uid="uid://riwnh5obo56h" path="res://back_of_pocket_phys.tres" id="11_cl460"]
 [ext_resource type="PackedScene" uid="uid://bupwjyx4deihm" path="res://3D Assets/PoolTable.glb" id="11_k2juo"]
-[ext_resource type="PackedScene" path="res://pushable.tscn" id="13_4pmw3"]
+[ext_resource type="PackedScene" uid="uid://cwtnkghthcdea" path="res://pushable.tscn" id="13_4pmw3"]
 [ext_resource type="PackedScene" path="res://immovable.tscn" id="13_lpckt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f2txt"]
