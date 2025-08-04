@@ -39,4 +39,4 @@ func complete():
 
 func end(button):
 	current_level = level_container.levels.find(button)
-	call_deferred("load_level", button.next_level)
+	call_deferred("load_level", button)
