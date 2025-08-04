@@ -2,13 +2,15 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0pp4wlogoaj"
+uid="uid://dykiwu2msxumc"
 path.s3tc="res://.godot/imported/PoolTable_PoolTableGround_Bake1_PBR_Diffuse.png-668cc7396b2a8d60f43112dcc7862a30.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
+generator_parameters={
+"md5": "f7ab739c3665beb547d6802e1b09fafe"
+}
 
 [deps]
 

@@ -2,13 +2,15 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do0crwe2qwh6"
+uid="uid://do4b7t7rrvqax"
 path.s3tc="res://.godot/imported/PoolTable_FeltBumper2_Bake1_PBR_Normal.png-7685ffd01832357bb57b286fa0ec90e2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
+generator_parameters={
+"md5": "7b9f587fc7a09536f3d1fdf28b37d644"
+}
 
 [deps]
 
