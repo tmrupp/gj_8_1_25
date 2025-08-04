@@ -5,12 +5,14 @@ var current_strokes = 0
 @onready var menu = $Menu
 @onready var level_container = $Menu/CanvasLayer/VBoxContainer/GridContainer
 @onready var current_stroke_label = $HUD/CanvasLayer/HBoxContainer/CurrentStroke
-
+@onready var title_label =$HUD/CanvasLayer/HBoxContainer/LevelName
 func add_stroke ():
 	current_strokes += 1
 	current_stroke_label.text = "Stroke: " + str(current_strokes)
 
-func load_level (level):
+func load_level (button):
+	var level = button.next_level
+	title_label.text = button.title
 	print("reseting level to", level)
 	current_strokes = 0
 	current_stroke_label.text = "Stroke: " + str(current_strokes)
@@ -33,7 +35,7 @@ func complete():
 		button.strokes = current_strokes
 	button.render()
 	current_level = (current_level + 1) % len(level_container.levels)
-	load_level(level_container.levels[current_level].next_level)
+	load_level(level_container.levels[current_level])
 
 func end(button):
 	current_level = level_container.levels.find(button)

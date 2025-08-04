@@ -32,6 +32,11 @@ grow_horizontal = 0
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
+[node name="LevelName" type="Label" parent="HUD/CanvasLayer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "Just the 8 Ball, Please"
+
 [node name="CurrentStroke" type="Label" parent="HUD/CanvasLayer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
