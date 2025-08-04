@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bmhaf3jvx3paq" path="res://2d art/splashscreen.png" id="3_5k4jt"]
 [ext_resource type="AudioStream" uid="uid://ifej1nd3bfqe" path="res://Audio/billiard song.mp3" id="4_m1504"]
 [ext_resource type="Script" path="res://levels/start.gd" id="4_qy63d"]
-[ext_resource type="PackedScene" uid="uid://di7q6ria43mdt" path="res://3D Assets/PoolHall.glb" id="5_ifaiv"]
+[ext_resource type="PackedScene" uid="uid://ck6rwma5twipe" path="res://3D Assets/PoolHall.glb" id="5_ifaiv"]
 
 [sub_resource type="Theme" id="Theme_5k4jt"]
 default_font_size = 50
