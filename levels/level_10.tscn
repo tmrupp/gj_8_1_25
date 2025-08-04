@@ -239,7 +239,7 @@ transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 4.37342, -0.499998, -3.
 transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 4.37378, -0.5, -0.659075)
 
 [node name="GoldBar20" parent="." instance=ExtResource("12_r6gwo")]
-transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 4.37342, -0.499998, 5.14991)
+transform = Transform3D(-2.40412e-07, 0, -5.5, 0, 5.5, 0, 5.5, 0, -2.40412e-07, 5.10008, -0.499998, 4.42439)
 
 [node name="GoldBar21" parent="." instance=ExtResource("12_r6gwo")]
 transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 4.37342, -0.499998, 2.24191)
