@@ -2,13 +2,15 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2gyp5wqavo3s"
+uid="uid://c0kbfy3hnw5ik"
 path.s3tc="res://.godot/imported/PoolTable_Pockets_Bake1_PBR_Normal.png-3dcd7eb8c19757a7078a508c6a678226.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={}
+generator_parameters={
+"md5": "a8947619dfd653353d81d46a1080710e"
+}
 
 [deps]
 
