@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://oi4emc4hgg08" path="res://BasicSprites/Square.svg" id="2_ecwwl"]
 [ext_resource type="Script" path="res://resume.gd" id="3_kk3ma"]
 [ext_resource type="Script" path="res://exit.gd" id="4_nrnbx"]
-[ext_resource type="Script" uid="uid://di7de5oqiydny" path="res://volume.gd" id="5_gd0jp"]
+[ext_resource type="Script" path="res://volume.gd" id="5_gd0jp"]
 [ext_resource type="Script" uid="uid://ra5ja2cw5nli" path="res://level_Selector.gd" id="5_iqepy"]
 [ext_resource type="Script" uid="uid://b55j2ho7g65nd" path="res://level_select.gd" id="6_h1wq0"]
 [ext_resource type="PackedScene" uid="uid://co7m0hav08y6k" path="res://levels/level_1.tscn" id="7_oxnod"]
@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://du6f82dvp3bki" path="res://levels/level_9.tscn" id="15_oil5j"]
 [ext_resource type="PackedScene" uid="uid://b2unxptbhxgoy" path="res://levels/level_10.tscn" id="17_4ndjb"]
 [ext_resource type="PackedScene" uid="uid://cpdq7wviwg8k1" path="res://levels/level_11.tscn" id="18_3ls4m"]
-[ext_resource type="PackedScene" uid="uid://opx7n2wk8gn2" path="res://levels/level_12.tscn" id="19_5h80m"]
+[ext_resource type="PackedScene" uid="uid://deo0h74sflfgq" path="res://levels/level_12.tscn" id="19_5h80m"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3

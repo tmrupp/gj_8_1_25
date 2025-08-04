@@ -5,13 +5,13 @@
 [ext_resource type="AudioStream" uid="uid://bbcpa085f31q5" path="res://Audio/BallHit6.mp3" id="3_cuxq2"]
 [ext_resource type="PackedScene" uid="uid://c2wfyu7tpds25" path="res://player_first_third_person.tscn" id="5_sgm4o"]
 [ext_resource type="PackedScene" uid="uid://ckhdwrcmbjvq2" path="res://ball.tscn" id="7_2pufk"]
-[ext_resource type="PackedScene" uid="uid://bahpyc15wjbob" path="res://hit_point.tscn" id="8_btc8u"]
+[ext_resource type="PackedScene" path="res://hit_point.tscn" id="8_btc8u"]
 [ext_resource type="PhysicsMaterial" uid="uid://clu4t8sedukaw" path="res://table_top.tres" id="10_0ourt"]
 [ext_resource type="PackedScene" uid="uid://o14owkbown13" path="res://pocket.tscn" id="10_i6smf"]
 [ext_resource type="PackedScene" uid="uid://21o63olrpvge" path="res://3D Assets/PoolTable.glb" id="11_d4rhq"]
 [ext_resource type="PhysicsMaterial" uid="uid://ch2bb6f8y6i2n" path="res://table_wall.tres" id="11_w200a"]
 [ext_resource type="PhysicsMaterial" uid="uid://riwnh5obo56h" path="res://back_of_pocket_phys.tres" id="12_uo0vl"]
-[ext_resource type="PackedScene" uid="uid://dc81qsifyjea4" path="res://immovable.tscn" id="18_aocai"]
+[ext_resource type="PackedScene" path="res://immovable.tscn" id="18_aocai"]
 [ext_resource type="PackedScene" uid="uid://cwtnkghthcdea" path="res://pushable.tscn" id="19_xwl8u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k2aru"]
@@ -20,7 +20,7 @@ size = Vector3(2.62337, 0.5, 4.748)
 [sub_resource type="BoxShape3D" id="BoxShape3D_ndgrd"]
 size = Vector3(2.7192, 0.5, 4.63604)
 
-[node name="Level2" type="Node3D"]
+[node name="Level" type="Node3D"]
 script = ExtResource("1_5kfcu")
 
 [node name="Audio" type="Node" parent="."]
