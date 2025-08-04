@@ -35,5 +35,6 @@ func complete():
 	current_level = (current_level + 1) % len(level_container.levels)
 	load_level(level_container.levels[current_level].next_level)
 
-func end(level):
-	call_deferred("load_level", level)
+func end(button):
+	current_level = level_container.levels.find(button)
+	call_deferred("load_level", button.next_level)

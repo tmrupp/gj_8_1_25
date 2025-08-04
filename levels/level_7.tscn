@@ -11,7 +11,7 @@
 [ext_resource type="PhysicsMaterial" uid="uid://ch2bb6f8y6i2n" path="res://table_wall.tres" id="10_38k6x"]
 [ext_resource type="PhysicsMaterial" uid="uid://riwnh5obo56h" path="res://back_of_pocket_phys.tres" id="11_cl460"]
 [ext_resource type="PackedScene" uid="uid://bupwjyx4deihm" path="res://3D Assets/PoolTable.glb" id="11_k2juo"]
-[ext_resource type="PackedScene" uid="uid://c8el65qgq75oi" path="res://pushable.tscn" id="13_4pmw3"]
+[ext_resource type="PackedScene" uid="uid://cwtnkghthcdea" path="res://pushable.tscn" id="13_4pmw3"]
 [ext_resource type="PackedScene" uid="uid://dc81qsifyjea4" path="res://immovable.tscn" id="13_lpckt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f2txt"]
@@ -33,7 +33,7 @@ size = Vector3(2.62337, 0.5, 4.748)
 [sub_resource type="BoxShape3D" id="BoxShape3D_xp58y"]
 size = Vector3(2.7192, 0.5, 4.63604)
 
-[node name="Level" type="Node3D"]
+[node name="Level3" type="Node3D"]
 script = ExtResource("1_4pmw3")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

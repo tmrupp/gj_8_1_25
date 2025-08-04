@@ -18,7 +18,7 @@
 [ext_resource type="PhysicsMaterial" uid="uid://riwnh5obo56h" path="res://back_of_pocket_phys.tres" id="11_42xju"]
 [ext_resource type="PhysicsMaterial" uid="uid://clu4t8sedukaw" path="res://table_top.tres" id="13_42xju"]
 [ext_resource type="PackedScene" uid="uid://dc81qsifyjea4" path="res://immovable.tscn" id="15_5pxul"]
-[ext_resource type="PackedScene" uid="uid://c8el65qgq75oi" path="res://pushable.tscn" id="16_fedht"]
+[ext_resource type="PackedScene" uid="uid://cwtnkghthcdea" path="res://pushable.tscn" id="16_fedht"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f2txt"]
 sky_top_color = Color(0.573859, 0.890914, 0.982785, 1)

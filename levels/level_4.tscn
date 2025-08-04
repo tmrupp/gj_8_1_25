@@ -12,7 +12,7 @@
 [ext_resource type="PhysicsMaterial" uid="uid://riwnh5obo56h" path="res://back_of_pocket_phys.tres" id="11_5oqfd"]
 [ext_resource type="PackedScene" uid="uid://bupwjyx4deihm" path="res://3D Assets/PoolTable.glb" id="11_27cb5"]
 [ext_resource type="PackedScene" uid="uid://dc81qsifyjea4" path="res://immovable.tscn" id="18_5vmwd"]
-[ext_resource type="PackedScene" uid="uid://c8el65qgq75oi" path="res://pushable.tscn" id="19_4e5e1"]
+[ext_resource type="PackedScene" uid="uid://cwtnkghthcdea" path="res://pushable.tscn" id="19_4e5e1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f2txt"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
