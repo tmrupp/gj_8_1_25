@@ -5,14 +5,14 @@
 [ext_resource type="AudioStream" uid="uid://bbcpa085f31q5" path="res://Audio/BallHit6.mp3" id="3_cl460"]
 [ext_resource type="PackedScene" uid="uid://c2wfyu7tpds25" path="res://player_first_third_person.tscn" id="5_xp58y"]
 [ext_resource type="PackedScene" uid="uid://ckhdwrcmbjvq2" path="res://ball.tscn" id="7_ydmfm"]
-[ext_resource type="PackedScene" uid="uid://bahpyc15wjbob" path="res://hit_point.tscn" id="8_nwhq7"]
+[ext_resource type="PackedScene" path="res://hit_point.tscn" id="8_nwhq7"]
 [ext_resource type="PhysicsMaterial" uid="uid://clu4t8sedukaw" path="res://table_top.tres" id="9_4pmw3"]
 [ext_resource type="PackedScene" uid="uid://o14owkbown13" path="res://pocket.tscn" id="10_3i5lu"]
 [ext_resource type="PhysicsMaterial" uid="uid://ch2bb6f8y6i2n" path="res://table_wall.tres" id="10_38k6x"]
 [ext_resource type="PhysicsMaterial" uid="uid://riwnh5obo56h" path="res://back_of_pocket_phys.tres" id="11_cl460"]
 [ext_resource type="PackedScene" uid="uid://bupwjyx4deihm" path="res://3D Assets/PoolTable.glb" id="11_k2juo"]
 [ext_resource type="PackedScene" uid="uid://cwtnkghthcdea" path="res://pushable.tscn" id="13_4pmw3"]
-[ext_resource type="PackedScene" uid="uid://dc81qsifyjea4" path="res://immovable.tscn" id="13_lpckt"]
+[ext_resource type="PackedScene" path="res://immovable.tscn" id="13_lpckt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f2txt"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -33,7 +33,7 @@ size = Vector3(2.62337, 0.5, 4.748)
 [sub_resource type="BoxShape3D" id="BoxShape3D_xp58y"]
 size = Vector3(2.7192, 0.5, 4.63604)
 
-[node name="Level3" type="Node3D"]
+[node name="Level" type="Node3D"]
 script = ExtResource("1_4pmw3")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
