@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://1y4ym5d5jsiq"]
 
 [ext_resource type="Script" uid="uid://3bdv1xytlgmu" path="res://control_animation.gd" id="1_0kck5"]
-[ext_resource type="Texture2D" uid="uid://cv2ngka0hljve" path="res://character sprites/polly_left.png" id="1_wofuv"]
-[ext_resource type="Texture2D" uid="uid://h1dqmwy06uii" path="res://character sprites/polly_back.png" id="2_0kck5"]
+[ext_resource type="Texture2D" uid="uid://cv2ngka0hljve" path="res://2d art/polly_left.png" id="1_wofuv"]
+[ext_resource type="Texture2D" uid="uid://h1dqmwy06uii" path="res://2d art/polly_back.png" id="2_0kck5"]
 
 [sub_resource type="Animation" id="Animation_vyr0r"]
 length = 0.001

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h1dqmwy06uii"
-path="res://.godot/imported/polly_back.png-05fbaa1be04805802d71f66c49eb034d.ctex"
+uid="uid://cv2ngka0hljve"
+path="res://.godot/imported/polly_left.png-4acd917cedf6272cea8aa1c2c898f6e1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character sprites/polly_back.png"
-dest_files=["res://.godot/imported/polly_back.png-05fbaa1be04805802d71f66c49eb034d.ctex"]
+source_file="res://2d art/polly_left.png"
+dest_files=["res://.godot/imported/polly_left.png-4acd917cedf6272cea8aa1c2c898f6e1.ctex"]
 
 [params]
 
