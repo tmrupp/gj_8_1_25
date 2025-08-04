@@ -2,16 +2,18 @@ extends Node3D
 
 var current_level = 0
 var current_strokes = 0
-
 @onready var menu = $Menu
 @onready var level_container = $Menu/CanvasLayer/VBoxContainer/GridContainer
+@onready var current_stroke_label = $HUD/CanvasLayer/HBoxContainer/CurrentStroke
 
 func add_stroke ():
 	current_strokes += 1
+	current_stroke_label.text = "Stroke: " + str(current_strokes)
 
 func load_level (level):
 	print("reseting level to", level)
 	current_strokes = 0
+	current_stroke_label.text = "Stroke: " + str(current_strokes)
 	var old = $Level
 	remove_child(old)
 	old.queue_free()
