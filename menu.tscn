@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cjqwwt423438q"]
+[gd_scene load_steps=18 format=3 uid="uid://cjqwwt423438q"]
 
 [ext_resource type="Script" uid="uid://bvcti16mvkff6" path="res://menu.gd" id="1_l48gv"]
 [ext_resource type="Texture2D" uid="uid://oi4emc4hgg08" path="res://BasicSprites/Square.svg" id="2_ecwwl"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bgtog6kpi8pd0" path="res://levels/level_7.tscn" id="13_td6mg"]
 [ext_resource type="PackedScene" uid="uid://cffjfcal8k5vj" path="res://levels/level_8.tscn" id="14_guify"]
 [ext_resource type="PackedScene" uid="uid://du6f82dvp3bki" path="res://levels/level_9.tscn" id="15_oil5j"]
+[ext_resource type="PackedScene" uid="uid://cpdq7wviwg8k1" path="res://levels/level_11.tscn" id="17_4ndjb"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -163,3 +164,11 @@ size_flags_vertical = 3
 text = "Clean Up"
 script = ExtResource("6_h1wq0")
 next_level = ExtResource("15_oil5j")
+
+[node name="Button11" type="Button" parent="CanvasLayer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "On Guard"
+script = ExtResource("6_h1wq0")
+next_level = ExtResource("17_4ndjb")
