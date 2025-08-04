@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bnfjti56qxvqe" path="res://levels/main.gd" id="1_l8qe7"]
 [ext_resource type="PackedScene" uid="uid://co7m0hav08y6k" path="res://levels/level_1.tscn" id="1_wdj6m"]
-[ext_resource type="PackedScene" path="res://menu.tscn" id="2_l8qe7"]
+[ext_resource type="PackedScene" uid="uid://cjqwwt423438q" path="res://menu.tscn" id="2_l8qe7"]
 [ext_resource type="AudioStream" uid="uid://ifej1nd3bfqe" path="res://Audio/billiard song.mp3" id="4_m1504"]
-[ext_resource type="PackedScene" uid="uid://dasm3yo1uhace" path="res://3D Assets/PoolHall.glb" id="5_ifaiv"]
+[ext_resource type="PackedScene" uid="uid://c5gq3lanhaj7y" path="res://3D Assets/PoolHall.glb" id="5_ifaiv"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_l8qe7")

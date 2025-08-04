@@ -25,9 +25,9 @@ func load_level (button):
 	$Menu._ready()
 	# Use get_tree() to access the SceneTree's change_scene_to_packed method
 
-func _input(event):
-	if event.is_action_pressed("SPACE"):
-		complete()
+#func _input(event):
+	#if event.is_action_pressed("SPACE"):
+		#complete()
 
 func complete():
 	var button = level_container.levels[current_level]

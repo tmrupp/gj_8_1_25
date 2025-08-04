@@ -15,6 +15,10 @@ run/main_scene="uid://0g3id7g7s6ha"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="GJ_8_1_25"
