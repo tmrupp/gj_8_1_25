@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cc658ydk0ogg1" path="res://ball.gd" id="1_41u45"]
 [ext_resource type="Texture2D" uid="uid://grjpwh88pi6e" path="res://BasicSprites/Circle.svg" id="2_ktgx5"]
 [ext_resource type="PackedScene" uid="uid://djdhjtfsgugvy" path="res://3D Assets/CueBall.glb" id="3_ce0bl"]
-[ext_resource type="Script" path="res://show_correct_ball.gd" id="3_of1j4"]
+[ext_resource type="Script" uid="uid://br1qyyaj5jhk5" path="res://show_correct_ball.gd" id="3_of1j4"]
 [ext_resource type="PackedScene" uid="uid://djhyx80i1pknv" path="res://3D Assets/1Ball.glb" id="4_of1j4"]
 [ext_resource type="PackedScene" uid="uid://pndc6e0kwuw3" path="res://3D Assets/2Ball.glb" id="5_ry73i"]
 [ext_resource type="PackedScene" uid="uid://bx06cbt2ns5yx" path="res://3D Assets/3Ball.glb" id="6_fa2nk"]

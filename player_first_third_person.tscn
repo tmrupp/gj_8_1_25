@@ -22,6 +22,7 @@ size = Vector2(0.683, 1)
 script = ExtResource("1_rtb52")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 shape = SubResource("CylinderShape3D_rtb52")
 
 [node name="FirstPersonLocation" type="Node3D" parent="."]
@@ -40,7 +41,7 @@ modulate = Color(0.34902, 0, 0.0901961, 1)
 texture = ExtResource("1_wki8j")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.2, 0, 0, 0, 1.19708, -0.0837078, 0, 0.0837078, 1.19708, 0, 0.1, 0)
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0.1, 0)
 material_override = SubResource("StandardMaterial3D_xsn2u")
 mesh = SubResource("QuadMesh_v0aan")
 script = ExtResource("3_xsn2u")

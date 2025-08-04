@@ -38,6 +38,10 @@ func _process(_delta):
 	else:
 		unlock_down()
 	
+	if body.position.y < -3:
+		body.linear_velocity = Vector3.ZERO
+		body.global_position = start_position
+	
 func _physics_process(delta):
 	#body.apply_force(-body.linear_velocity.normalized()*friction*delta)
 	pass
