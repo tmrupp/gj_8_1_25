@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://7wrl2ma0jfm1"]
+[gd_scene load_steps=14 format=3 uid="uid://7wrl2ma0jfm1"]
 
 [ext_resource type="Script" uid="uid://ca51xv8rofmne" path="res://level_manager.gd" id="1_m516p"]
 [ext_resource type="AudioStream" uid="uid://c1y0khfclaxee" path="res://Audio/BallHit5.mp3" id="2_l3m5x"]
@@ -12,19 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://21o63olrpvge" path="res://3D Assets/PoolTable.glb" id="11_ho1yv"]
 [ext_resource type="PhysicsMaterial" uid="uid://riwnh5obo56h" path="res://back_of_pocket_phys.tres" id="11_m516p"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f2txt"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-energy_multiplier = 0.5
-
-[sub_resource type="Sky" id="Sky_1ainy"]
-sky_material = SubResource("ProceduralSkyMaterial_f2txt")
-
-[sub_resource type="Environment" id="Environment_n6hdu"]
-background_mode = 2
-sky = SubResource("Sky_1ainy")
-tonemap_mode = 2
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_l3m5x"]
 size = Vector3(2.62337, 0.5, 4.748)
 
@@ -33,9 +20,6 @@ size = Vector3(2.7192, 0.5, 4.63604)
 
 [node name="Level2" type="Node3D"]
 script = ExtResource("1_m516p")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_n6hdu")
 
 [node name="Audio" type="Node" parent="."]
 

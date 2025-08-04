@@ -1,31 +1,18 @@
-[gd_scene load_steps=19 format=3 uid="uid://b2unxptbhxgoy"]
+[gd_scene load_steps=16 format=3 uid="uid://b2unxptbhxgoy"]
 
 [ext_resource type="Script" uid="uid://ca51xv8rofmne" path="res://level_manager.gd" id="1_bfq0i"]
 [ext_resource type="AudioStream" uid="uid://c1y0khfclaxee" path="res://Audio/BallHit5.mp3" id="2_cr0e4"]
 [ext_resource type="AudioStream" uid="uid://bbcpa085f31q5" path="res://Audio/BallHit6.mp3" id="3_wgo1c"]
 [ext_resource type="PackedScene" uid="uid://c2wfyu7tpds25" path="res://player_first_third_person.tscn" id="4_s88sk"]
 [ext_resource type="PackedScene" uid="uid://ckhdwrcmbjvq2" path="res://ball.tscn" id="5_aoyam"]
-[ext_resource type="PackedScene" path="res://hit_point.tscn" id="6_5r2q3"]
+[ext_resource type="PackedScene" uid="uid://bahpyc15wjbob" path="res://hit_point.tscn" id="6_5r2q3"]
 [ext_resource type="PackedScene" uid="uid://o14owkbown13" path="res://pocket.tscn" id="7_b27ru"]
 [ext_resource type="PackedScene" uid="uid://21o63olrpvge" path="res://3D Assets/PoolTable.glb" id="8_tkuam"]
 [ext_resource type="PhysicsMaterial" uid="uid://clu4t8sedukaw" path="res://table_top.tres" id="9_aqkyu"]
 [ext_resource type="PhysicsMaterial" uid="uid://ch2bb6f8y6i2n" path="res://table_wall.tres" id="10_y2q43"]
 [ext_resource type="PhysicsMaterial" uid="uid://riwnh5obo56h" path="res://back_of_pocket_phys.tres" id="11_r113n"]
-[ext_resource type="PackedScene" path="res://immovable.tscn" id="12_r6gwo"]
+[ext_resource type="PackedScene" uid="uid://dc81qsifyjea4" path="res://immovable.tscn" id="12_r6gwo"]
 [ext_resource type="PackedScene" uid="uid://cwtnkghthcdea" path="res://pushable.tscn" id="13_eh384"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f2txt"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-energy_multiplier = 0.5
-
-[sub_resource type="Sky" id="Sky_1ainy"]
-sky_material = SubResource("ProceduralSkyMaterial_f2txt")
-
-[sub_resource type="Environment" id="Environment_n6hdu"]
-background_mode = 2
-sky = SubResource("Sky_1ainy")
-tonemap_mode = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oqlok"]
 size = Vector3(2.62337, 0.5, 4.748)
@@ -35,9 +22,6 @@ size = Vector3(2.7192, 0.5, 4.63604)
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_bfq0i")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_n6hdu")
 
 [node name="Audio" type="Node" parent="."]
 
