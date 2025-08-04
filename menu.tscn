@@ -120,8 +120,7 @@ next_level = ExtResource("9_4ndjb")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Around the Bend
-"
+text = "Around the Bend"
 script = ExtResource("6_h1wq0")
 next_level = ExtResource("10_3ls4m")
 

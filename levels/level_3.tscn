@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ckhdwrcmbjvq2" path="res://ball.tscn" id="7_xlghs"]
 [ext_resource type="PackedScene" uid="uid://bahpyc15wjbob" path="res://hit_point.tscn" id="8_vu1t2"]
 [ext_resource type="PackedScene" uid="uid://o14owkbown13" path="res://pocket.tscn" id="10_sxkcw"]
-[ext_resource type="PackedScene" uid="uid://bupwjyx4deihm" path="res://3D Assets/PoolTable.glb" id="11_mgdrr"]
+[ext_resource type="PackedScene" uid="uid://dxr0dvr6rkway" path="res://3D Assets/PoolTable.glb" id="11_mgdrr"]
 [ext_resource type="PhysicsMaterial" uid="uid://clu4t8sedukaw" path="res://table_top.tres" id="11_s3q8p"]
 [ext_resource type="PhysicsMaterial" uid="uid://ch2bb6f8y6i2n" path="res://table_wall.tres" id="12_u4kh1"]
 [ext_resource type="PhysicsMaterial" uid="uid://riwnh5obo56h" path="res://back_of_pocket_phys.tres" id="13_svivd"]
