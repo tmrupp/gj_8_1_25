@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://ifej1nd3bfqe" path="res://Audio/billiard song.mp3" id="4_ait7k"]
 [ext_resource type="PackedScene" uid="uid://bahpyc15wjbob" path="res://hit_point.tscn" id="6_n6hdu"]
 [ext_resource type="Script" uid="uid://bvcti16mvkff6" path="res://menu.gd" id="8_i2t4f"]
-[ext_resource type="PackedScene" uid="uid://dxr0dvr6rkway" path="res://3D Assets/PoolTable.glb" id="8_km5ld"]
+[ext_resource type="PackedScene" uid="uid://21o63olrpvge" path="res://3D Assets/PoolTable.glb" id="8_km5ld"]
 [ext_resource type="Texture2D" uid="uid://oi4emc4hgg08" path="res://BasicSprites/Square.svg" id="9_2orkt"]
 [ext_resource type="Script" uid="uid://ra5ja2cw5nli" path="res://level_Selector.gd" id="9_8cye3"]
 [ext_resource type="PhysicsMaterial" uid="uid://ch2bb6f8y6i2n" path="res://table_wall.tres" id="9_ait7k"]
