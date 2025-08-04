@@ -12,4 +12,4 @@ func render ():
 	container.render()
 
 func _pressed():
-	main.end(next_level)
+	main.end(self)
