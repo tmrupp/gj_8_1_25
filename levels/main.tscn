@@ -91,7 +91,7 @@ theme = SubResource("Theme_qy63d")
 text = "R: Restart
 ESC: Pull up menu
 WASD: Move
-R-Mouse: Shoot"
+L-Mouse: Shoot"
 
 [node name="Label2" type="Label" parent="Control/CanvasLayer"]
 offset_left = 717.0
