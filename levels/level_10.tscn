@@ -1,17 +1,18 @@
-[gd_scene load_steps=18 format=3 uid="uid://cffjfcal8k5vj"]
+[gd_scene load_steps=19 format=3 uid="uid://b2unxptbhxgoy"]
 
-[ext_resource type="Script" uid="uid://ca51xv8rofmne" path="res://level_manager.gd" id="1_6kkia"]
-[ext_resource type="AudioStream" uid="uid://c1y0khfclaxee" path="res://Audio/BallHit5.mp3" id="2_fksli"]
-[ext_resource type="AudioStream" uid="uid://bbcpa085f31q5" path="res://Audio/BallHit6.mp3" id="3_lyejb"]
-[ext_resource type="PackedScene" uid="uid://c2wfyu7tpds25" path="res://player_first_third_person.tscn" id="5_6vtyo"]
-[ext_resource type="PackedScene" uid="uid://ckhdwrcmbjvq2" path="res://ball.tscn" id="7_ody6k"]
-[ext_resource type="PackedScene" path="res://hit_point.tscn" id="8_f41nr"]
-[ext_resource type="PhysicsMaterial" uid="uid://clu4t8sedukaw" path="res://table_top.tres" id="9_k2ajo"]
-[ext_resource type="PhysicsMaterial" uid="uid://ch2bb6f8y6i2n" path="res://table_wall.tres" id="10_6kkia"]
-[ext_resource type="PackedScene" uid="uid://o14owkbown13" path="res://pocket.tscn" id="10_lxi47"]
-[ext_resource type="PackedScene" uid="uid://21o63olrpvge" path="res://3D Assets/PoolTable.glb" id="11_anmmm"]
-[ext_resource type="PhysicsMaterial" uid="uid://riwnh5obo56h" path="res://back_of_pocket_phys.tres" id="11_fksli"]
-[ext_resource type="PackedScene" path="res://immovable.tscn" id="13_i3mp8"]
+[ext_resource type="Script" uid="uid://ca51xv8rofmne" path="res://level_manager.gd" id="1_bfq0i"]
+[ext_resource type="AudioStream" uid="uid://c1y0khfclaxee" path="res://Audio/BallHit5.mp3" id="2_cr0e4"]
+[ext_resource type="AudioStream" uid="uid://bbcpa085f31q5" path="res://Audio/BallHit6.mp3" id="3_wgo1c"]
+[ext_resource type="PackedScene" uid="uid://c2wfyu7tpds25" path="res://player_first_third_person.tscn" id="4_s88sk"]
+[ext_resource type="PackedScene" uid="uid://ckhdwrcmbjvq2" path="res://ball.tscn" id="5_aoyam"]
+[ext_resource type="PackedScene" path="res://hit_point.tscn" id="6_5r2q3"]
+[ext_resource type="PackedScene" uid="uid://o14owkbown13" path="res://pocket.tscn" id="7_b27ru"]
+[ext_resource type="PackedScene" uid="uid://21o63olrpvge" path="res://3D Assets/PoolTable.glb" id="8_tkuam"]
+[ext_resource type="PhysicsMaterial" uid="uid://clu4t8sedukaw" path="res://table_top.tres" id="9_aqkyu"]
+[ext_resource type="PhysicsMaterial" uid="uid://ch2bb6f8y6i2n" path="res://table_wall.tres" id="10_y2q43"]
+[ext_resource type="PhysicsMaterial" uid="uid://riwnh5obo56h" path="res://back_of_pocket_phys.tres" id="11_r113n"]
+[ext_resource type="PackedScene" path="res://immovable.tscn" id="12_r6gwo"]
+[ext_resource type="PackedScene" uid="uid://cwtnkghthcdea" path="res://pushable.tscn" id="13_eh384"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f2txt"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -26,14 +27,14 @@ background_mode = 2
 sky = SubResource("Sky_1ainy")
 tonemap_mode = 2
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_lyejb"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_oqlok"]
 size = Vector3(2.62337, 0.5, 4.748)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_85qo6"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_7nvrk"]
 size = Vector3(2.7192, 0.5, 4.63604)
 
 [node name="Level" type="Node3D"]
-script = ExtResource("1_6kkia")
+script = ExtResource("1_bfq0i")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_n6hdu")
@@ -41,11 +42,11 @@ environment = SubResource("Environment_n6hdu")
 [node name="Audio" type="Node" parent="."]
 
 [node name="Sound1" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("2_fksli")
+stream = ExtResource("2_cr0e4")
 max_polyphony = 15
 
 [node name="Sound2" type="AudioStreamPlayer" parent="Audio"]
-stream = ExtResource("3_lyejb")
+stream = ExtResource("3_wgo1c")
 max_polyphony = 15
 
 [node name="Lights" type="Node3D" parent="."]
@@ -83,62 +84,62 @@ projection = 1
 current = true
 size = 24.0
 
-[node name="Player2" parent="." instance=ExtResource("5_6vtyo")]
-transform = Transform3D(0.0065974, 0, -0.999978, 0, 1, 0, 0.999978, 0, 0.0065974, -10.9872, 0, -0.0169393)
+[node name="Player2" parent="." instance=ExtResource("4_s88sk")]
+transform = Transform3D(-0.0623201, 0, -0.998056, 0, 1, 0, 0.998056, 0, -0.0623201, -15.0324, 0, 0.613809)
 
 [node name="Balls" type="Node3D" parent="."]
 
-[node name="Ball_Cue" parent="Balls" instance=ExtResource("7_ody6k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.84518, 0, 0.0783215)
+[node name="Ball_Cue" parent="Balls" instance=ExtResource("5_aoyam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.85453, 0, 1.43464)
 ball_number = 0
 
-[node name="Ball_8" parent="Balls" instance=ExtResource("7_ody6k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0523624, 0, 0.0481749)
+[node name="Ball_8" parent="Balls" instance=ExtResource("5_aoyam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.12511, 0, -1.45061)
 is_cue = false
 is_8_ball = true
 ball_number = 8
 
-[node name="HitPoint" parent="." instance=ExtResource("8_f41nr")]
+[node name="HitPoint" parent="." instance=ExtResource("6_5r2q3")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -12.5279, 0, -0.899924)
 visible = false
 
 [node name="Pockets" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 0)
 
-[node name="Pocket" parent="Pockets" instance=ExtResource("10_lxi47")]
+[node name="Pocket" parent="Pockets" instance=ExtResource("7_b27ru")]
 transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 19.388, 0, 11.397)
 
-[node name="Pocket2" parent="Pockets" instance=ExtResource("10_lxi47")]
+[node name="Pocket2" parent="Pockets" instance=ExtResource("7_b27ru")]
 transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 0, 0, 11.936)
 
-[node name="Pocket3" parent="Pockets" instance=ExtResource("10_lxi47")]
+[node name="Pocket3" parent="Pockets" instance=ExtResource("7_b27ru")]
 transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, -19.388, 0, 11.397)
 
-[node name="Pocket4" parent="Pockets" instance=ExtResource("10_lxi47")]
+[node name="Pocket4" parent="Pockets" instance=ExtResource("7_b27ru")]
 transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, -19.388, 0, -11.397)
 
-[node name="Pocket5" parent="Pockets" instance=ExtResource("10_lxi47")]
+[node name="Pocket5" parent="Pockets" instance=ExtResource("7_b27ru")]
 transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 19.388, 0, -11.397)
 
-[node name="Pocket6" parent="Pockets" instance=ExtResource("10_lxi47")]
+[node name="Pocket6" parent="Pockets" instance=ExtResource("7_b27ru")]
 transform = Transform3D(0.405, 0, 0, 0, 0.405, 0, 0, 0, 0.405, 0, 0, -11.936)
 
-[node name="PoolTable" parent="." instance=ExtResource("11_anmmm")]
+[node name="PoolTable" parent="." instance=ExtResource("8_tkuam")]
 transform = Transform3D(-3.49691e-07, 0, 8, 0, 8, 0, -8, 0, -3.49691e-07, 0, -0.5, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PoolTable"]
-physics_material_override = ExtResource("9_k2ajo")
+physics_material_override = ExtResource("9_aqkyu")
 
 [node name="TableFlatA" type="CollisionShape3D" parent="PoolTable/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000125051, -0.25, -3.1225e-17)
-shape = SubResource("BoxShape3D_lyejb")
+shape = SubResource("BoxShape3D_oqlok")
 
 [node name="TableFlatB" type="CollisionShape3D" parent="PoolTable/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000711441, -0.25, 0.00307941)
-shape = SubResource("BoxShape3D_85qo6")
+shape = SubResource("BoxShape3D_7nvrk")
 
 [node name="StaticBodyWalls" type="StaticBody3D" parent="PoolTable"]
-physics_material_override = ExtResource("10_6kkia")
+physics_material_override = ExtResource("10_y2q43")
 
 [node name="NorthWallA" type="CollisionPolygon3D" parent="PoolTable/StaticBodyWalls"]
 transform = Transform3D(0.125, 0, 0, 0, -5.46392e-09, 0.125, 0, -0.125, -5.46392e-09, 1.06883, 0.05, -1.70633)
@@ -169,7 +170,7 @@ transform = Transform3D(1, 0, 0, 0, 4.37114e-08, 1, 0, 1, -4.37114e-08, 0, -0.3,
 polygon = PackedVector2Array(1.29613, 2.47664, 1.15788, 2.6895, -1.15838, 2.68871, -1.2941, 2.47926, -1.16255, 2.3743, 1.163, 2.374)
 
 [node name="StaticBodyPockets" type="StaticBody3D" parent="PoolTable"]
-physics_material_override = ExtResource("11_fksli")
+physics_material_override = ExtResource("11_r113n")
 
 [node name="NorthWestCorner" type="CollisionPolygon3D" parent="PoolTable/StaticBodyPockets"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
@@ -195,83 +196,77 @@ polygon = PackedVector2Array(1.45, 0.14, 1.564, 0.14, 1.65, 0, 1.565, -0.14, 1.4
 transform = Transform3D(-1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 polygon = PackedVector2Array(1.45, 0.14, 1.564, 0.14, 1.65, 0, 1.565, -0.14, 1.45, -0.14, 1.41873, -0.156543, 1.6603, -0.313536, 1.9674, 8.48777e-05, 1.65115, 0.327551, 1.419, 0.157)
 
-[node name="GoldBar" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(5.5, 0, 0.00211684, 0, 5.5, 0, -0.00211684, 0, 5.5, 1.682, -0.499999, 0.0882338)
+[node name="GoldBar" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(3.82421, 0, 3.9529, 0, 5.5, 0, -3.9529, 0, 3.82421, -17.3594, -0.499998, 9.28343)
 
-[node name="GoldBar2" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(5.5, 0, 0.00211684, 0, 5.5, 0, -0.00211684, 0, 5.5, 1.682, -0.499999, 0.0882338)
+[node name="GoldBar23" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(-2.40413e-07, 0, 5.5, 0, 5.5, 0, -5.5, 0, -2.40413e-07, 0.0609913, -0.499998, 10.3524)
 
-[node name="GoldBar3" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(0.0679665, 0, -5.49958, 0, 5.5, 0, 5.49958, 0, 0.0679665, -3.11664, -0.499999, -1.51131)
+[node name="GoldBar24" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(-2.40413e-07, 0, 5.5, 0, 5.5, 0, -5.5, 0, -2.40413e-07, 0.033783, -0.499998, -10.3217)
 
-[node name="GoldBar4" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(5.5, 0, 0.00211684, 0, 5.5, 0, -0.00211684, 0, 5.5, -2.44789, -0.499999, -3.77055)
+[node name="GoldBar2" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -10.8624, -0.499998, -9.32738)
 
-[node name="GoldBar5" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(0.0082607, 0, -5.5, 0, 5.5, 0, 5.5, 0, 0.0082607, 0.722196, -0.499999, -9.41716)
+[node name="GoldBar3" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -10.862, -0.5, -6.41066)
 
-[node name="GoldBar12" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(0.0082607, 0, -5.5, 0, 5.5, 0, 5.5, 0, 0.0082607, 3.68285, -0.499999, -9.39348)
+[node name="GoldBar4" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -10.8624, -0.499998, -3.48442)
 
-[node name="GoldBar13" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(0.0082607, 0, -5.5, 0, 5.5, 0, 5.5, 0, 0.0082607, 6.64349, -0.499999, -9.44085)
+[node name="GoldBar5" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -10.862, -0.5, -0.554063)
 
-[node name="GoldBar14" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(0.0082607, 0, -5.5, 0, 5.5, 0, 5.5, 0, 0.0082607, 2.42753, -0.499999, -4.96434)
+[node name="GoldBar6" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -10.8624, -0.499998, 6.42796)
 
-[node name="GoldBar15" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(0.0082607, 0, -5.5, 0, 5.5, 0, 5.5, 0, 0.0082607, 5.34081, -0.499999, -4.96434)
+[node name="GoldBar8" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -10.8624, -0.499998, 3.49056)
 
-[node name="GoldBar16" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(0.0082607, 0, -5.5, 0, 5.5, 0, 5.5, 0, 0.0082607, 8.25409, -0.499999, -4.96434)
+[node name="GoldBar7" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -10.862, -0.5, 9.37135)
 
-[node name="GoldBar17" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(-5.49993, 0, -0.0283233, 0, 5.5, 0, 0.0283233, 0, -5.49993, 9.01201, -0.499999, -2.7853)
+[node name="GoldBar16" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 4.37342, -0.499998, -9.34838)
 
-[node name="GoldBar18" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(-5.49993, 0, -0.0283233, 0, 5.5, 0, 0.0283233, 0, -5.49993, 9.01201, -0.499999, 0.151661)
+[node name="GoldBar17" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 4.37378, -0.5, -6.46107)
 
-[node name="GoldBar19" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(-5.49993, 0, -0.0283233, 0, 5.5, 0, 0.0283233, 0, -5.49993, 9.05938, -0.499999, 3.04126)
+[node name="GoldBar18" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 4.37342, -0.499998, -3.56843)
 
-[node name="GoldBar20" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(-0.0116204, 0, 5.49999, 0, 5.5, 0, -5.49999, 0, -0.0116204, 9.58045, -0.499999, -9.41716)
+[node name="GoldBar19" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 4.37378, -0.5, -0.659075)
 
-[node name="GoldBar21" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(4.2109, 0, 3.53813, 0, 5.5, 0, -3.53813, 0, 4.2109, 12.5411, -0.499999, -8.11447)
+[node name="GoldBar20" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 4.37342, -0.499998, 5.14991)
 
-[node name="GoldBar22" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(5.49986, 0, -0.0395433, 0, 5.5, 0, 0.0395433, 0, 5.49986, 13.678, -0.499999, -5.10645)
+[node name="GoldBar21" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 4.37342, -0.499998, 2.24191)
 
-[node name="GoldBar23" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(5.49975, 0, -0.052406, 0, 5.5, 0, 0.052406, 0, 5.49975, 13.7254, -0.499999, -2.1458)
+[node name="GoldBar22" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, 4.37378, -0.5, 9.37135)
 
-[node name="GoldBar24" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(5.49975, 0, -0.052406, 0, 5.5, 0, 0.052406, 0, 5.49975, 13.7254, -0.499999, 0.767478)
+[node name="GoldBar9" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -3.39098, -0.499998, -9.32738)
 
-[node name="GoldBar25" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(5.49975, 0, -0.052406, 0, 5.5, 0, 0.052406, 0, 5.49975, 13.7254, -0.499999, 3.65708)
+[node name="GoldBar10" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -3.39062, -0.5, -6.42241)
 
-[node name="GoldBar26" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(5.49996, 0, -0.0209215, 0, 5.5, 0, 0.0209215, 0, 5.49996, 13.7017, -0.499999, 6.47561)
+[node name="GoldBar11" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -3.39098, -0.499998, -3.51919)
 
-[node name="GoldBar27" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(2.56284, 0, -4.8664, 0, 5.5, 0, 4.8664, 0, 2.56284, -2.35688, -0.499999, -9.41716)
+[node name="GoldBar12" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -3.39062, -0.5, 0.628154)
 
-[node name="GoldBar6" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(2.83946, 0, -4.71036, 0, 5.5, 0, 4.71036, 0, 2.83946, 0.178544, -0.499999, 2.93737)
+[node name="GoldBar13" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -3.39098, -0.499998, 6.46066)
 
-[node name="GoldBar7" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(-0.0242812, 0, -5.49995, 0, 5.5, 0, 5.49995, 0, -0.0242812, -2.93042, -0.499999, 2.7351)
+[node name="GoldBar14" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -3.39098, -0.499998, 3.54246)
 
-[node name="GoldBar8" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(0.03773, 0, -5.49987, 0, 5.5, 0, 5.49987, 0, 0.03773, -5.92096, -0.499999, 2.7095)
+[node name="GoldBar15" parent="." instance=ExtResource("12_r6gwo")]
+transform = Transform3D(5.5, 0, 0, 0, 5.5, 0, 0, 0, 5.5, -3.39062, -0.5, 9.37135)
 
-[node name="GoldBar9" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(0.0289949, 0, -5.49993, 0, 5.5, 0, 5.49993, 0, 0.0289949, -6.03421, -0.499999, -1.51131)
-
-[node name="GoldBar10" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(5.49999, 0, 0.0126761, 0, 5.5, 0, -0.0126761, 0, 5.49999, -2.47364, -0.499999, -6.70767)
-
-[node name="GoldBar11" parent="." instance=ExtResource("13_i3mp8")]
-transform = Transform3D(5.5, 0, 0.00211684, 0, 5.5, 0, -0.00211684, 0, 5.5, 1.69479, -0.499999, -2.81654)
+[node name="Pushable2" parent="." instance=ExtResource("13_eh384")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3189, -0.483647, 4.84251)
