@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://0g3id7g7s6ha"]
+[gd_scene load_steps=10 format=3 uid="uid://0g3id7g7s6ha"]
 
 [ext_resource type="Script" uid="uid://bnfjti56qxvqe" path="res://levels/main.gd" id="1_l8qe7"]
 [ext_resource type="PackedScene" uid="uid://co7m0hav08y6k" path="res://levels/level_1.tscn" id="1_wdj6m"]
@@ -10,6 +10,9 @@
 
 [sub_resource type="Theme" id="Theme_5k4jt"]
 default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_qy63d"]
+default_font_size = 46
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_l8qe7")
@@ -80,6 +83,15 @@ theme = SubResource("Theme_5k4jt")
 text = "START
 "
 script = ExtResource("4_qy63d")
+
+[node name="Label" type="Label" parent="Control/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+theme = SubResource("Theme_qy63d")
+text = "R: Restart
+ESC: Pull up menu
+WASD: Move
+R-Mouse: Shoot"
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 process_mode = 3
